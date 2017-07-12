@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email', 'password', 'user_id', 'verification_code'
+        'contact', 'password', 'user_id', 'verification_code'
     ];
 
     /**
@@ -26,12 +26,12 @@ class User extends Authenticatable
 
     //custom validation rules
     public static $signup_validation_rules = [
-        'email' => 'required|email|unique:users',
+        'contact' => 'required|numeric|unique:users|digits:10',
         'password' => 'required'
     ];
 
     public static $signin_validation_rules = [
-        'email' => 'required|email|exists:users',
+        'contact' => 'required|numeric|exists:users|digits:10',
         'password' => 'required'
     ];
 }

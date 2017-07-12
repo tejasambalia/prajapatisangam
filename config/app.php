@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost:8081/virtul'),
+    'url' => env('APP_URL', 'http://localhost:8081/prajapatisangam'),
 
     /*
     |--------------------------------------------------------------------------
