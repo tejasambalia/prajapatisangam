@@ -1,97 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title id="">Prajapati Sangam | comming soon | Prajapati community | Prajapati | feel proud to be prajapati</title>
+        <meta name="description" content="Prajapati Sangam is National level community" />
+        <meta name="keywords" content="Prajapati, Prajapati sangam, prajapatisangam, ps, sangam, prajapati network, prajapati community, community, prajapati news, prajapati updates" />
+        <meta name="author" content="prajapati" />
+        
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        
+        <!--Fonts - changed to Source Code Pro-->
+        <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" type="text/css" href="css/style-home.css" />
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-102106058-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </head>
     
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Coming Soon</title>
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Proza+Libre:400,400i,500,500i" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body style="padding-top: 0">
-
-    <section class="coming_soon">
-        <div class="view_table">
-            <div class="view_cell">
-                <img src="img/logo-min.png" class="img-responsive center-block space20" style="height: 100px;">  
-                <h3 class="coming_title space50"> we launching soon </h3>      
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <p class="coming_in">
-                                Art lover can't wait to see what you build.
-                            </p>
-                        </div>
-                        <div class="item">
-                            <p class="coming_in">
-                                first we feel then we fall
-                            </p>      
-                        </div>
-                    </div>
-                </div>
-                <ul id="coming_soon" class="list-inline timer_box">
-                  <li><span class="days">00</span><p class="days_text">Days</p></li>
-                    <li><span class="hours">00</span><p class="hours_text">Hours</p></li>
-                    <li><span class="minutes">00</span><p class="minutes_text">Minutes</p></li>
-                    <li><span class="seconds">00</span><p class="seconds_text">Seconds</p></li>
-                </ul>  
-                <!-- <form class="mailchimp_form">
-                    <div class="form-group">
-                        <input type="email" name="mail_add" class="form-control" placeholder="Enter Email Address" required="true">
-                        <button type="submit" class="btn"> get notified! </button>
-                    </div>
-                </form> -->
-                <!-- Begin MailChimp Signup Form -->
-                <div id="mc_embed_signup">
-                <form action="//virtul.us15.list-manage.com/subscribe/post?u=a1e86c69c8dd82e5c252aade9&amp;id=c5b047ca96" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate mailchimp_form" target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll">
-                <div class="mc-field-group form-group">
-                    <input type="email" value="" name="EMAIL" placeholder="Enter Email Address" class="required email form-control" id="mce-EMAIL">
-                    <input type="submit" value="get notified!" name="subscribe" id="mc-embedded-subscribe" class="button btn">
-                </div>
-                    <div id="mce-responses" class="clear">
-                        <div class="response" id="mce-error-response" style="display:none"></div>
-                        <div class="response" id="mce-success-response" style="display:none"></div>
-                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a1e86c69c8dd82e5c252aade9_c5b047ca96" tabindex="-1" value=""></div>
+    <body data-ng-app="contactApp">
+        
+        <!--Container-->
+        <div class="pad-zero ht100">
+            
+            <!--Splitlayout -->
+            <div id="splitlayout" class="splitlayout reset-layout ht100">
+                
+                <!--Intro-->
+                <div class="intro ht100">
                     
+                    <!--Left Content Intro-->
+                    <div class="side side-left col-md-6">
+                        
+                        
+                        <div class="col-lg-8 col-md-9 col-sm-9 col-xs-9 align-center content-wrap">
+                        
+                        <!--Logo-->
+                        <div class="logo align-center text-left">
+                            <h1 style="text-transform: uppercase; color: #FF1D4D;">Prajapati Sangam</h1>
+                        </div>
+                        <!--/Logo-->
+                        
+                        <!--main content-->
+                        <div class="main">
+                            
+                            <!--Content with Typing Intro-->
+                            <section id="home" class="section active">
+                                <div  class="preloader"></div>
+                                <div class="align-center text-left">
+                                    <span class="small-hr" style="background-color: #FF1D4D;"></span>
+                                    <p class="" style="font-size: 25px;">Feel proud to be Prajapati</p>
+                                    <div class="type-wrap text-left">
+                                        <h1  class="">Coming Soon</h1>
+                                    </div>
+
+                                    <p class="wellcome-text">Hello..</p>
+                                    <form id="notifyMe" class="contact-form" action="subscribe.php" method="post">
+                                        <div class="input-wrap">
+                                            <input class="col-lg-10  align-center form-control input input__field input__field--hoshi notify-input-box" name="contact" placeholder="enter contact number"  type="text">
+                                            <label class="input__label input__label--hoshi input__label--hoshi-color-1"></label>
+                                        </div>
+                                        <div class="notify-btn main-menu">
+                                            <button type="submit" class="btn btn-default"><span class="button-label text-left">Notify me</span><span class="arrow-wrap"><span class="arrow"></span></span></button>
+                                        </div>
+                                    </form>
+                                </div>      
+                            </section>
+                            <!--/Content with Typing Intro-->
+                            
+                            <!--Notify Form-->
+                            <section id="contact" class="section text-left">
+                                <div  class="preloader"></div>  
+                                <div class="main-menu">
+                                    <a class="close-notify black" href="#home" data-animation="fadeInDown" data-animation-delay="900" data-out-animation="fadeOutUp" data-out-animation-delay="100">
+                                        <div class="call-to-action">
+                                            <i class="fa fa-times fa-2x"></i>   
+                                            <span class="top"></span>
+                                            <span class="right"></span>
+                                            <span class="bottom"></span>
+                                            <span class="left"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </section>
+                            <!--/Notify Form-->
+                                                    
+                            <div class="copyright">
+                                <p>Pampered by Prajapati Sangam © 2017</p>
+                            </div>
+                        </div>
+                        <!--/main content-->
+                        
+                        </div>
                     </div>
-                </form>
+                    <!--/Left Content Intro-->
+                    
+                    <!--Right Content Intro-->
+                    <div class="side side-right col-md-6">
+                        <!-- <div class="bg"></div> -->
+                        <div class="bg disappear"></div>
+                        <!--slider image-->
+                        <ul class="cb-slideshow">
+                            <li>
+                                <span>
+                                    <div></div>
+                                </span>
+                            </li>
+                        </ul>
+                        <!--/slider image-->
+                        
+                        <div class="counter-content">
+                            <div class="col-lg-8 col-md-9 col-sm-9 col-xs-9 align-center text-left">
+                                <p class="tagline">It's platform for all Prajapati to grow up and stay connected with each other.</p>
+                                <span class="small-hr" style="background-color: #FF1D4D;"></span>
+                                <p class="tagline">Don't be a hidden star, Show your talent to the Prajapati family.</p>
+                                <span class="small-hr" style="background-color: #FF1D4D;"></span>
+                                <p class="tagline">Get news updates of Prajapati.</p>
+                                <span class="small-hr" style="background-color: #FF1D4D;"></span>
+                                
+                            </div>  
+                        </div>
+                        <div class="trans-overlay-dark"></div>  
+                    </div>
+                    <!--/Right Content Intro-->
                 </div>
-                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-                <!--End mc_embed_signup-->
+                <!--/Intro-->
+                <div class="container" id="fakeDiv">
+                    
+                </div>
+                <div class="row" style="background-color: #000">
+                    <div class="logo container" style="margin-top: 50px; margin-bottom: 50px;">
+                        <h2 style="color: #696969; text-align: center; font-size: 50px;">Built for Prajapati</h2>
+                        <div class="container" style="text-align: center;">
+                            <p style="line-height: 40px !important; color: #FFF;"><span style="color: #FF1D4D">Prajapati Sangam</span> is a platform for people,</p>
+                            <p style="line-height: 40px !important; color: #FFF;">Who have some unique talent.</p>
+                            <p style="line-height: 40px !important; color: #FFF;">It's India's first prajapati platform where people can meet.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="logo" style="margin-top: 50px; margin-bottom: 50px;">
+                        <h2 style="color: #696969; text-align: center; font-size: 50px;">A better way to meet together</h2>
+                        <div class="container" style="text-align: center;">
+                            <p style="line-height: 40px !important;">You can communicate with each other through <span style="color: #FF1D4D">Prajapati Sangam</span></p>
+                            <p style="line-height: 40px !important;">Meet our hidden stars, who sacrificed for achieving their goals.</p>
+                            <p style="line-height: 40px !important;">For notify or getting updates register with your <span style="color: #FF1D4D">contact number</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="background-color: #696969">
+                    <div class="logo" style="margin-top: 50px; margin-bottom: 50px;">
+                        <h2 style="color: #FFF; text-align: center; font-size: 50px;">If you have any query or any idea?</h2>
+                        <div class="container" style="text-align: center;">
+                            <p style="line-height: 40px !important;">Send mail on <span style="color: #FFF; font-size: 20px;">namaste@prajapatisangam.com</span></p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
+            <!-- /Splitlayout -->
+        
         </div>
-    </section>
+        <!-- /Container -->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.countdown.js"></script>
-
-    <script type="text/javascript">
-        $('#coming_soon').countdown({
-            date: '8/06/2017 23:59:59',
-            days: 'Days'
-        }, function () {
-            alert('Done!');
-        });
-    </script>
-  </body>
+    </body>
 </html>
+
+<!-- Localized -->
