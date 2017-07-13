@@ -59,7 +59,7 @@
                                 <div  class="preloader"></div>
                                 <div class="align-center text-left">
                                     <span class="small-hr" style="background-color: #FF1D4D;"></span>
-                                    <p class="" style="font-size: 25px;">Feel proud to be Prajapati</p>
+                                    <p class="" style="font-size: 25px; text-transform: uppercase;">Feel proud for being Prajapati</p>
                                     <div class="type-wrap text-left">
                                         <h1  class="">Coming Soon</h1>
                                     </div>
@@ -121,9 +121,9 @@
                         
                         <div class="counter-content">
                             <div class="col-lg-8 col-md-9 col-sm-9 col-xs-9 align-center text-left">
-                                <p class="tagline">It's platform for all Prajapati to grow up and stay connected with each other.</p>
+                                <p class="tagline">India's first platform for Prajapati where people can meet and stay connected with each other.</p>
                                 <span class="small-hr" style="background-color: #FF1D4D;"></span>
-                                <p class="tagline">Don't be a hidden star, Show your talent to the Prajapati family.</p>
+                                <p class="tagline">Don't be a hidden star, Show your talent to the Prajapati community.</p>
                                 <span class="small-hr" style="background-color: #FF1D4D;"></span>
                                 <p class="tagline">Get news updates of Prajapati.</p>
                                 <span class="small-hr" style="background-color: #FF1D4D;"></span>
@@ -144,23 +144,22 @@
                         <div class="container" style="text-align: center;">
                             <p style="line-height: 40px !important; color: #FFF;"><span style="color: #FF1D4D">Prajapati Sangam</span> is a platform for people,</p>
                             <p style="line-height: 40px !important; color: #FFF;">Who have some unique talent.</p>
-                            <p style="line-height: 40px !important; color: #FFF;">It's India's first prajapati platform where people can meet.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row container">
                     <div class="logo" style="margin-top: 50px; margin-bottom: 50px;">
-                        <h2 style="color: #696969; text-align: center; font-size: 50px;">A better way to meet together</h2>
+                        <h2 style="color: #696969; text-align: center; font-size: 50px;">A better way to meet eachother</h2>
                         <div class="container" style="text-align: center;">
-                            <p style="line-height: 40px !important;">You can communicate with each other through <span style="color: #FF1D4D">Prajapati Sangam</span></p>
-                            <p style="line-height: 40px !important;">Meet our hidden stars, who sacrificed for achieving their goals.</p>
+                            <p style="line-height: 40px !important;">You can communicate with prajapati people through <span style="color: #FF1D4D">Prajapati Sangam</span></p>
+                            <p style="line-height: 40px !important;">Meet our hidden stars, who have sacrificed for achieving their goals.</p>
                             <p style="line-height: 40px !important;">For notify or getting updates register with your <span style="color: #FF1D4D">contact number</span></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="row" style="background-color: #696969">
+                <div class="row container" style="background-color: #696969">
                     <div class="logo" style="margin-top: 50px; margin-bottom: 50px;">
                         <h2 style="color: #FFF; text-align: center; font-size: 50px;">If you have any query or any idea?</h2>
                         <div class="container" style="text-align: center;">
