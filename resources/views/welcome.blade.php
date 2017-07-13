@@ -148,8 +148,8 @@
                     </div>
                 </div>
 
-                <div class="row container">
-                    <div class="logo" style="margin-top: 50px; margin-bottom: 50px;">
+                <div class="row">
+                    <div class="logo container" style="margin-top: 50px; margin-bottom: 50px;">
                         <h2 style="color: #696969; text-align: center; font-size: 50px;">A better way to meet eachother</h2>
                         <div class="container" style="text-align: center;">
                             <p style="line-height: 40px !important;">You can communicate with prajapati people through <span style="color: #FF1D4D">Prajapati Sangam</span></p>
@@ -159,8 +159,8 @@
                     </div>
                 </div>
 
-                <div class="row container" style="background-color: #696969">
-                    <div class="logo" style="margin-top: 50px; margin-bottom: 50px;">
+                <div class="row" style="background-color: #696969">
+                    <div class="logo container" style="margin-top: 50px; margin-bottom: 50px;">
                         <h2 style="color: #FFF; text-align: center; font-size: 50px;">If you have any query or any idea?</h2>
                         <div class="container" style="text-align: center;">
                             <p style="line-height: 40px !important;">Send mail on <span style="color: #FFF; font-size: 20px;">namaste@prajapatisangam.com</span></p>
