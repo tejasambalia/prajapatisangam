@@ -69,11 +69,11 @@ class UsersController extends Controller
   }
 
   public function handleSignin(Request $request){
-    $data = $request->only('email', 'password');
+    $data = $request->only('contact', 'password');
     //laravel validation
     $validator = $this->validate($request, User::$signin_validation_rules);
 
-    //check email verification is done or not
+    //check verification is done or not
     $check_verified = DB::table('users')->where('contact', $data['contact'])->value('verified');
     if(\Auth::attempt($data)&&$check_verified){
         return redirect('/');
@@ -82,30 +82,6 @@ class UsersController extends Controller
       $msg = "contact or password is invalid";
       return back()->withInput()->withErrors(['email' => $msg]);
     }
-  }
-
-  //verify email and user
-  public function verify($userid, $verifyid){
-      //get verification code from database
-      $verification_code = DB::table('users')
-      ->where('user_id', $userid)
-      ->value('verification_code');
-      //Check verified value 0 to 1 in database
-      if($verification_code==$verifyid){
-          //Change verified value 0 to 1 in database
-          DB::table('users')
-          ->where('user_id', $userid)
-          ->update(['verified' => 1]);
-
-          $msg = "User verified successfull";
-          session(['msg' => $msg]);
-          //redirect to the login page
-          return redirect('/');
-      }
-      else{
-      	$msg = "User doesn't verified";
-        session(['msg' => $msg]);
-      }
   }
 
   public function forgetPassword(Request $request){
@@ -179,6 +155,36 @@ class UsersController extends Controller
       'email' => 'required|email|exists:users',
       'password' => 'required'
     ));
+  }
+
+  public function verify(){
+    return view('users.verify');
+  }
+
+  public function handleVerify(Request $request){
+    $this->validate($request, User::$handle_verify_validation_rules);
+
+    //get data
+    $contact = $request->only('contact');
+
+    $verification = DB::table('users')    
+      ->select('verified')
+      ->where('contact', '=', $contact)
+      ->get();
+
+    if(!$verification[0]->verified){
+      DB::table('users')
+      ->where('contact', $contact)
+      ->update(['verified' => 1]);
+
+      $msg = "Verified successfully!";
+      session(['msg' => $msg]);
+    }
+    else{
+      $msg = "Already verified!";
+      session(['msg' => $msg]);
+    }
+    return redirect()->route('signin');
   }
 
   public function userVerification()

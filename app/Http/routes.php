@@ -35,8 +35,8 @@ Route::post('/handleSignin', ['as' => 'handleSignin', 'uses' =>'UsersController@
 
 //verification
 
-Route::get('/verify', ['as' => 'verify', 'uses' =>'UsersController@userVerification']); 
-Route::get('/handleVerify', ['as' => 'verify', 'uses' =>'UsersController@userVerification']); 
+Route::get('/verify', ['as' => 'verify', 'uses' =>'UsersController@verify']); 
+Route::post('/handleVerify', ['as' => 'handleVerify', 'uses' =>'UsersController@handleVerify']); 
 
 //manage profile
 

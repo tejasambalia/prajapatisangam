@@ -42,17 +42,16 @@
                                             </div>
                                         @endif
                                         <div class="space20"></div>
-                                        {!! Form::open(array('route' => 'handleSignin', 'class' => 'middle_form', 'id' => 'form-validation', 'accept-charset' => 'utf-8')) !!}
-                                            {!! Form::hidden('api', '0') !!}
+                                        {!! Form::open(array('route' => 'handleVerify', 'class' => 'middle_form', 'id' => 'form-validation', 'accept-charset' => 'utf-8')) !!}
                                             {!! Form::token() !!}
                                             <div class="form-group">
                                                 {!! Form::text('contact', null, array('class' => 'form-control',  'placeholder' => 'Contact Number', 'required' => 'required')) !!}
                                             </div>
                                             <div class="form-group">
-                                                {!! Form::password('password', array('class' => 'form-control',  'placeholder' => 'Password', 'required' => 'required')) !!}
+                                                {!! Form::text('verification_code', null, array('class' => 'form-control',  'placeholder' => 'Verification code', 'required' => 'required')) !!}
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-signin">Signin</button>
+                                                <button type="submit" class="btn btn-signin">Verify</button>
                                             </div>
                                             <div>
                                                 <p> Do not have an account yet, <a href="{{ url('/signup') }}" class="register-link"> Register Here. </a> </p>

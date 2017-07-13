@@ -34,4 +34,9 @@ class User extends Authenticatable
         'contact' => 'required|numeric|exists:users|digits:10',
         'password' => 'required'
     ];
+
+    public static $handle_verify_validation_rules = [
+        'contact' => 'required|numeric|exists:users|digits:10',
+        'verification_code' => 'required|numeric|exists:users|digits:5'
+    ];
 }
