@@ -76,13 +76,6 @@
                 <input type="text" name="website" class="form-control" placeholder="Education">
                 <h4 class="profile_sub_title">Occupation</h4>
                 <input type="text" name="website" class="form-control" placeholder="Occupation">
-                <!-- <h4 class="profile_sub_title"><span> Social Connections </span></h4>
-                <ul class="list-inline profile_social space10">
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                </ul> -->
             </div>
             <div class="col-md-9 profile_right_box">
                 <h3 class="profile_title"><span> about you </span></h3>
@@ -115,6 +108,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-offset-3 col-md-9">
+                    <input type="submit" value="save" name="subscribe" id="mc-embedded-subscribe" class="button btn save_btn">
                 </div>
             </div>
         </div>
