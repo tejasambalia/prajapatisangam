@@ -543,6 +543,17 @@ label {
     .mailchimp_form .form-group {
         margin-top: 10px;
     }
+
+    .nav-option-link {
+        display: none;
+    }
+
+    .site-logo-text {
+        color: #FFF;
+        font-size: 20px !important;
+        white-space: nowrap;
+        padding-top: 13px !important;
+    }
 }
 
 /*=====================Coming Soon Section Ends here======================*/
@@ -710,6 +721,11 @@ label.error {
     }
     .sign-side-block {
         padding: 35px 10px;
+    }
+    .site-logo-text {
+        color: #FFF;
+        font-size: 18px;
+        white-space: nowrap;
     }
 }
 
@@ -1003,6 +1019,32 @@ header {
     margin-left: 200px;
     z-index: 999;
     background: #fff;
+}
+
+.nav-options {
+    display: block;
+    padding: 17px 0;
+}
+
+.nav-option-link {
+    padding-right: 5px;
+    margin-right: 5px;
+    color: #FFF;
+    border-right: 2px solid #fff;
+}
+
+.nav-option-link:last-child {
+    border-right: 0px solid #fff !important;
+}
+
+.site-logo-text {
+    color: #FFF;
+    font-size: 25px;
+    white-space: nowrap;
+}
+
+.textarea-resize-no { 
+    resize: none; 
 }
 /*===================== Profile Ends here  ======================*/
 

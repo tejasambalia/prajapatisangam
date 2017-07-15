@@ -20,8 +20,10 @@ Route::get('/index', function(){
 });
 
 Route::get('/editProfile', function(){
-	return view('editProfile');
+	return view('users.editProfile');
 });
+
+Route::post('/handleEditProfile', ['as' => 'handleEditProfile', 'uses' =>'UsersController@store']); //handle signup
 
 Route::get('/home', function(){
 	return view('home');

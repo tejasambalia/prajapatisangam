@@ -26,7 +26,7 @@
                 <div class="profile_title_box">
                     <!-- <h1 class="profile_name">Sanket Patel</h1> -->
                     <input type="text" name="profile_name" class="form-control" placeholder="Sanket Patel">
-                    <input type="text" name="designation" class="form-control space10" placeholder="Web Developer">
+                    <!-- <input type="text" name="designation" class="form-control space10" placeholder="Web Developer"> -->
                 </div>
             </div>
         </div>

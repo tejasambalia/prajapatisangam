@@ -39,11 +39,12 @@
   				<div class="nav-links">
   					<ul class="list-unstyled">
   						<li><a href="#"> <i class="fa fa-user" aria-hidden="true"></i> profile </a></li>
-  						<li><a href="#"> board </a></li>
+  						<li><a href="#"> create family tree </a></li>
+              <li><a href="#"> Home </a></li>
   						<li><a href="#"> trending now </a></li>
   						<li><a href="#"> categories </a></li>
   						<li><a href="#"> history </a></li>
-  						<li><a href="#"> subscriptions </a></li>
+  						<li><a href="#"> logout </a></li>
   					</ul>
   				</div>
   			</div>
@@ -60,19 +61,14 @@
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 					<div class="main-logo">
-						<a href="#"><img src="img/Logo-1-white.png" class="img-responsive center-block" height="50"></a>
+						<a href="#" class="site-logo-text">PRAJAPATI SANGAM<!-- <img src="img/Logo-1-white.png" class="img-responsive center-block" height="50"> --></a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-					<div class="dropdown top-profile">
-						<a href="#" data-toggle="dropdown" class="profile-img">
-							<img src="img/PicsArt_11-14-12.30.45.jpg" class="img-responsive center-block">
-						</a>
-						<div class="dropdown-menu">
-							<ul class="list-unstyled">
-								<li><a href="#">logout</a></li>
-							</ul>
-						</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: right;">
+					<div class="top-profile nav-options">
+            <a href="#" class="nav-option-link">Tejas</a>
+            <a href="#" class="nav-option-link">Home</a>
+            <a href="#" class="nav-option-link">Logout</a>
 					</div>
 				</div>
 			</div>
