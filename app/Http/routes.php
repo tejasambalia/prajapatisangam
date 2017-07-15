@@ -19,16 +19,19 @@ Route::get('/index', function(){
 	return view('index');
 });
 
-Route::get('/editProfile', function(){
-	return view('users.editProfile');
-});
-
-Route::post('/handleEditProfile', ['as' => 'handleEditProfile', 'uses' =>'UsersController@store']); //handle signup
-
 Route::get('/home', function(){
 	return view('home');
 });
 
+//add profile
+Route::get('/addProfile', ['middleware' => 'auth', 'as' => 'addProfile', 'uses' => 'UsersController@addProfile']);	//add profile
+Route::get('/handleAddProfile', ['middleware' => 'auth', 'as' => 'handleAddProfile', 'uses' => 'UsersController@handleAddProfile']);	//handle add profile
+
+//edit profile
+Route::get('/editProfile', ['middleware' => 'auth', 'as' => 'editProfile', 'uses' => 'UsersController@editProfile']);	//edit profile
+Route::post('/handleEditProfile', ['middleware' => 'auth', 'as' => 'handleEditProfile', 'uses' =>'UsersController@store']); //handle edit profile
+
+//signin and signup
 Route::get('/signin', ['as' => 'signin', 'uses' =>'UsersController@signin']); //Signin landing page
 Route::get('/signup', ['as' => 'signup', 'uses' =>'UsersController@signup']); //Signup landing page
 

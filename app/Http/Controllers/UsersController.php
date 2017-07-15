@@ -193,6 +193,14 @@ class UsersController extends Controller
       $verifyObject->verifyByUserIdVerifyId($userid,$verificationcode);       
   }
 
+  public function addProfile(){
+    return view('users.addProfile');
+  }
+
+  public function editProfile(){
+    return view('users.editProfile');
+  }
+
 //get
   public function viewProfile(Request $request)
   {

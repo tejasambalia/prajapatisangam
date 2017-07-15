@@ -24,7 +24,7 @@ $StateDropDown = $StateObj->StateDropDown();
 $CityObj = new CityDropDown;
 $CityDropDown = $CityObj->CityDropDown();
 ?>
-{!! Form::open(array('route' => 'handleEditProfile', 'id' => 'form-validation', 'accept-charset' => 'utf-8')) !!}
+{!! Form::open(array('route' => 'handleAddProfile', 'id' => 'form-validation', 'accept-charset' => 'utf-8')) !!}
 {!! Form::token() !!}
 <section class="profile_header">
     <div class="container">
