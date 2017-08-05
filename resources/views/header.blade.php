@@ -39,12 +39,12 @@
   				<div class="nav-links">
   					<ul class="list-unstyled">
   						<li><a href="#"> <i class="fa fa-user" aria-hidden="true"></i> profile </a></li>
-  						<li><a href="#"> create family tree </a></li>
               <li><a href="#"> Home </a></li>
-  						<li><a href="#"> trending now </a></li>
+  						<li><a href="#"> create family tree </a></li>
+  						<!-- <li><a href="#"> trending now </a></li>
   						<li><a href="#"> categories </a></li>
-  						<li><a href="#"> history </a></li>
-  						<li><a href="#"> logout </a></li>
+  						<li><a href="#"> history </a></li> -->
+  						<li><a href="{{ url('/logout') }}"> logout </a></li>
   					</ul>
   				</div>
   			</div>
@@ -66,9 +66,8 @@
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: right;">
 					<div class="top-profile nav-options">
-            <a href="#" class="nav-option-link">Tejas</a>
             <a href="#" class="nav-option-link">Home</a>
-            <a href="#" class="nav-option-link">Logout</a>
+            <a href="{{ url('/logout') }}" class="nav-option-link">Logout</a>
 					</div>
 				</div>
 			</div>

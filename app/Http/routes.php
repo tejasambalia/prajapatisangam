@@ -23,12 +23,14 @@ Route::get('/home', function(){
 	return view('home');
 });
 
+Route::get('/logout', ['as' => 'logout', 'uses' => 'UsersController@logout']);
+
 //add profile
 Route::get('/addProfile', ['middleware' => 'auth', 'as' => 'addProfile', 'uses' => 'UsersController@addProfile']);	//add profile
-Route::get('/handleAddProfile', ['middleware' => 'auth', 'as' => 'handleAddProfile', 'uses' => 'UsersController@handleAddProfile']);	//handle add profile
+Route::post('/handleAddProfile', ['middleware' => 'auth', 'as' => 'handleAddProfile', 'uses' => 'UsersController@handleAddProfile']);	//handle add profile
 
 //edit profile
-Route::get('/editProfile', ['middleware' => 'auth', 'as' => 'editProfile', 'uses' => 'UsersController@editProfile']);	//edit profile
+Route::get('/editProfile', ['middleware' => 'auth', 'as' => 'editProfile', 'uses' => 'UsersController@addProfile']);	//edit profile
 Route::post('/handleEditProfile', ['middleware' => 'auth', 'as' => 'handleEditProfile', 'uses' =>'UsersController@store']); //handle edit profile
 
 //signin and signup

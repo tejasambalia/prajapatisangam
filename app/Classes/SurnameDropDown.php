@@ -13,7 +13,9 @@ Class SurnameDropDown {
 		$optionData = '<option>Select Surname</option>';
 		if($selectId!=null){
 			foreach ($surnameData as $data) {
-				$optionData .= '<option value="'.$data->id.'" ('.$data->id==$selectId.')?"selected":"">'.$data->name.'</option>';
+				$optionData .= '<option value="'.$data->id.'" ';
+				if($data->id==$selectId){$optionData .= 'selected';}
+				$optionData .= '>'.$data->name.'</option>';
 			}
 		}
 		else{

@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\UserProfile;
+use App\UserData;
+use App\UserAddress;
 use App\Classes\General;
 use App\Classes\Sms;
 use Mail;
@@ -201,6 +202,28 @@ class UsersController extends Controller
     return view('users.editProfile');
   }
 
+  public function handleAddProfile(Request $request){
+    //$validator = $this->validate($request, UserData::$validateData);
+    $data = $request->only('firstName', 'middleName', 'surnameId', 'birthDate', 'gender', 'married', 'phone', 'email', 'website', 'homeTown', 'education', 'occupation', 'about', 'thoughts', 'address', 'state', 'city', 'Pincode', 'relationSelect');
+    
+    $data['user_id'] = \Auth::user()->id;
+    $data['relationSelect'] = ($data['relationSelect']==''?'0':$data['relationSelect']);
+    $data['relationCreated'] = '0';
+
+    $addressObj = UserAddress::add($data);
+    $data['addressId'] = $addressObj;
+
+    $userObj = UserData::addProfile($data);
+
+    //set flag profile created
+    DB::table('users')
+      ->where('id', \Auth::user()->id)
+      ->update(['profile_created' => '1']);
+
+    $msg = "Data saved successfully";
+    return redirect()->route('editProfile')->withErrors(['notification' => $msg]);
+  }
+
 //get
   public function viewProfile(Request $request)
   {
@@ -258,5 +281,11 @@ class UsersController extends Controller
     die();  
     
 
+  }
+
+  public function logout()
+  {
+    \Auth::logout();
+    return redirect('/');
   }
 }

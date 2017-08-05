@@ -9,10 +9,12 @@ Class CityDropDown {
 	public function CityDropDown($selectId=null) {
 		$obj = new City;
 		$data = $obj->get();
-		$optionData = '<option>Select Surname</option>';
+		$optionData = '<option>Select City</option>';
 		if($selectId!=null){
 			foreach ($data as $d) {
-				$optionData .= '<option value="'.$d->id.'" ('.$d->id==$selectId.')?"selected":"">'.$d->name.'</option>';
+				$optionData .= '<option value="'.$d->id.'" ';
+				if($d->id==$selectId){$optionData .= 'selected';}
+				$optionData .= '>'.$d->name.'</option>';
 			}
 		}
 		else{

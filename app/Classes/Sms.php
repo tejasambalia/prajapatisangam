@@ -8,7 +8,7 @@ Class Sms {
 
 	private function apiRequest($contact, $msg){
 		$auth_key = "140349An8oDWzih58972245";
-		$link = "https://control.msg91.com/api/sendhttp.php?authkey=".$auth_key."&mobiles=".$contact."&message=".$msg."&sender=MT-VPYM&route=1&country=91";
+		$link = "https://control.msg91.com/api/sendhttp.php?authkey=".$auth_key."&mobiles=".$contact."&message=".$msg."&sender=PRJPTI&route=4&country=91";
 		$res = file_get_contents($link);
 	}
 
