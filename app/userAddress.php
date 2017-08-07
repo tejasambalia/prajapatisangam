@@ -19,6 +19,10 @@ class UserAddress extends Model
         return $addressObj;
     }
 
+    public static function getSingleColumnData($addressId, $columnName){
+        $profileObj = DB::table('userAddress')->where('id', $addressId)->select($columnName)->first();
+    }
+
     public static function add($data){
     	DB::table('userAddress')->insert([
             'address'           => $data['address'],
@@ -31,5 +35,16 @@ class UserAddress extends Model
             ->max('id');
 
         return $addressId;
+    }
+
+    public static function updateAddress($data){
+        DB::table('userAddress')
+            ->where('id', $data['addressId'])
+            ->update([
+                'address'           => $data['address'],
+                'cityId'            => $data['city'],
+                'stateId'           => $data['state'],
+                'pincode'           => $data['Pincode']
+            ]);
     }
 }

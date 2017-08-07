@@ -38,7 +38,18 @@ $StateDropDown = $StateObj->StateDropDown($userAddress->stateId);
 $CityObj = new CityDropDown;
 $CityDropDown = $CityObj->CityDropDown($userAddress->cityId);
 ?>
+<?php
+if($profileAdded){
+?>
+{!! Form::open(array('route' => 'handleEditProfile', 'id' => 'form-validation', 'accept-charset' => 'utf-8')) !!}
+<?php
+}
+else{
+?>
 {!! Form::open(array('route' => 'handleAddProfile', 'id' => 'form-validation', 'accept-charset' => 'utf-8')) !!}
+<?php
+}
+?>
 {!! Form::token() !!}
 <section class="profile_header">
     <div class="container">

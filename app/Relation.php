@@ -4,20 +4,25 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class State extends Model 
+class Relation extends Model 
 {
     //
     protected $fillable = [
-        'id', 'name'
+        'id', 'name', 'active'
     ];
 
     public static function findById($id){
-        $obj = DB::table('m_state')->where('id', $id)->first();
+        $obj = DB::table('m_relation')
+            ->where([
+                ['id', '=', $id],
+                ['active', '=', '1']
+            ])
+            ->first();
         return $obj;
     }
 
     public static function getSingleColumn($id, $column){
-        $obj = DB::table('m_state')
+        $obj = DB::table('m_relation')
             ->select($column)
             ->where('id', $id)
             ->first();
@@ -26,10 +31,11 @@ class State extends Model
 
     public static function get()
     {
-        $surnameObj = DB::table('m_state')
+        $obj = DB::table('m_relation')
+            ->where('active', '1')
         	->select('id', 'name')
         	->get();        	
         
-        return $surnameObj;
+        return $obj;
     }
 }

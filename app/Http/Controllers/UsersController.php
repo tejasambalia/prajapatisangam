@@ -16,7 +16,6 @@ use DB;
 use Storage;
 use Validator;
 use Response;
-//include (App\Classes\General.php);
 
 class UsersController extends Controller
 {
@@ -77,7 +76,7 @@ class UsersController extends Controller
     //check verification is done or not
     $check_verified = DB::table('users')->where('contact', $data['contact'])->value('verified');
     if(\Auth::attempt($data)&&$check_verified){
-        return redirect('/');
+        return redirect('/handleProfile');
     }
     else{
       $msg = "contact or password is invalid";
@@ -221,7 +220,37 @@ class UsersController extends Controller
       ->update(['profile_created' => '1']);
 
     $msg = "Data saved successfully";
-    return redirect()->route('editProfile')->withErrors(['notification' => $msg]);
+    return redirect()->route('profile')->withErrors(['notification' => $msg]);
+  }
+
+  public function handleEditProfile(Request $request){
+    //$validator = $this->validate($request, UserData::$validateData);
+    $data = $request->only('firstName', 'middleName', 'surnameId', 'birthDate', 'gender', 'married', 'phone', 'email', 'website', 'homeTown', 'education', 'occupation', 'about', 'thoughts', 'address', 'state', 'city', 'Pincode', 'relationSelect');
+
+    $data['user_id'] = \Auth::user()->id;
+    $data['relationSelect'] = ($data['relationSelect']==''?'0':$data['relationSelect']);
+    
+    $userObj = UserData::updateProfile($data);
+    $data['addressId'] = $userObj->addressId;
+
+    $addressObj = UserAddress::updateAddress($data);
+
+    $msg = "Data updated successfully";
+    return redirect()->route('profile')->withErrors(['notification' => $msg]);
+  }
+
+  public function profile(){
+    return view('users.profile');
+  }
+
+  public function handleProfile(){
+    $profileCreated = \Auth::user()->profile_created;
+    if($profileCreated){
+      return redirect()->route('profile');
+    }
+    else{
+      return redirect()->route('addProfile'); 
+    }
   }
 
 //get

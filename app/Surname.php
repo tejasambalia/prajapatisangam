@@ -11,6 +11,19 @@ class Surname extends Model
         'id', 'name'
     ];
 
+    public static function findById($id)
+    {
+        $surnameObj = DB::table('m_surname')->where('id', $id)->first();
+        return $surnameObj;
+    }
+
+    public static function getSingleColumn($id, $column){
+        $surnameObj = DB::table('m_surname')
+            ->select($column)
+            ->where('id', $id)
+            ->first();
+        return $surnameObj;
+    }
 
     public static function get()
     {

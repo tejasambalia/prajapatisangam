@@ -30,6 +30,19 @@ class UserData extends Model
         return $profileObj;
     }
 
+    public static function getSingleColumnData($userId, $columnName){
+        $profileObj = DB::table('userData')->where('user_id', $userId)->select($columnName)->first();
+        return $profileObj;
+    }
+
+    public static function getTreeDetails($userId){
+        $obj = DB::table('userData')
+            ->where('user_id', $userId)
+            ->get();
+            
+        return $obj;
+    }
+
     public static function addProfile($data){
     	DB::table('userData')->insert([
             'user_id' 			=> $data['user_id'],
@@ -51,5 +64,34 @@ class UserData extends Model
             'relationSelect' 	=> $data['relationSelect'],
             'relationCreated' 	=> $data['relationCreated']
         ]);
+    }
+
+    public static function updateProfile($data){
+        DB::table('userData')
+            ->where('user_id', $data['user_id'])
+            ->update([
+                'firstName'         => $data['firstName'],
+                'middleName'        => $data['middleName'],
+                'surnameId'         => $data['surnameId'],
+                'birthDate'         => $data['birthDate'],
+                'gender'            => $data['gender'],
+                'married'           => $data['married'],
+                'phone'             => $data['phone'],
+                'email'             => $data['email'],
+                'website'           => $data['website'],
+                'homeTown'          => $data['homeTown'],
+                'education'         => $data['education'],
+                'occupation'        => $data['occupation'],
+                'about'             => $data['about'],
+                'thoughts'          => $data['thoughts'],
+                'relationSelect'    => $data['relationSelect']
+            ]);
+
+        $addressId = DB::table('userData')
+            ->select('addressId')
+            ->where('user_id', $data['user_id'])
+            ->first();
+
+        return $addressId;
     }
 }

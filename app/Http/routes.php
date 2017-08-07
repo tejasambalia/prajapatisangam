@@ -16,22 +16,25 @@ Route::get('/', function () {
 });
 
 Route::get('/index', function(){
-	return view('index');
-});
-
-Route::get('/home', function(){
-	return view('home');
+	return view('welcome');
 });
 
 Route::get('/logout', ['as' => 'logout', 'uses' => 'UsersController@logout']);
 
-//add profile
-Route::get('/addProfile', ['middleware' => 'auth', 'as' => 'addProfile', 'uses' => 'UsersController@addProfile']);	//add profile
-Route::post('/handleAddProfile', ['middleware' => 'auth', 'as' => 'handleAddProfile', 'uses' => 'UsersController@handleAddProfile']);	//handle add profile
+//Profile
+Route::get('/handleProfile', ['middleware' => 'auth', 'as' => 'handleProfile', 'uses' => 'UsersController@handleProfile']);
+Route::get('/profile', ['middleware' => 'auth', 'as' => 'profile', 'uses' => 'UsersController@profile']);
+Route::get('/addProfile', ['middleware' => 'auth', 'as' => 'addProfile', 'uses' => 'UsersController@addProfile']);
+Route::post('/handleAddProfile', ['middleware' => 'auth', 'as' => 'handleAddProfile', 'uses' => 'UsersController@handleAddProfile']);
+Route::get('/editProfile', ['middleware' => 'auth', 'as' => 'editProfile', 'uses' => 'UsersController@addProfile']);
+Route::post('/handleEditProfile', ['middleware' => 'auth', 'as' => 'handleEditProfile', 'uses' =>'UsersController@handleEditProfile']);
 
-//edit profile
-Route::get('/editProfile', ['middleware' => 'auth', 'as' => 'editProfile', 'uses' => 'UsersController@addProfile']);	//edit profile
-Route::post('/handleEditProfile', ['middleware' => 'auth', 'as' => 'handleEditProfile', 'uses' =>'UsersController@store']); //handle edit profile
+//Family Tree
+Route::get('/familyTree', ['middleware' => 'auth', 'as' => 'familyTree', 'uses' => 'TreeController@familyTree']);
+Route::get('/addFamilyTree', ['middleware' => 'auth', 'as' => 'addFamilyTree', 'uses' => 'TreeController@addFamilyTree']);
+Route::get('/editFamilyTree', ['middleware' => 'auth', 'as' => 'editFamilyTree', 'uses' => 'TreeController@editFamilyTree']);
+Route::post('/handleAddFamilyTree', ['middleware' => 'auth', 'as' => 'handleAddFamilyTree', 'uses' => 'TreeController@handleAddFamilyTree']);
+Route::post('/handleEditFamilyTree', ['middleware' => 'auth', 'as' => 'handleEditFamilyTree', 'uses' => 'TreeController@handleEditFamilyTree']);
 
 //signin and signup
 Route::get('/signin', ['as' => 'signin', 'uses' =>'UsersController@signin']); //Signin landing page
@@ -43,9 +46,4 @@ Route::post('/handleSignin', ['as' => 'handleSignin', 'uses' =>'UsersController@
 //verification
 
 Route::get('/verify', ['as' => 'verify', 'uses' =>'UsersController@verify']); 
-Route::post('/handleVerify', ['as' => 'handleVerify', 'uses' =>'UsersController@handleVerify']); 
-
-//manage profile
-
-Route::get('/profile', ['as' => 'profile', 'uses' =>'UsersController@viewProfile']); 
-Route::post('/manageProfile', ['as' => 'manageProfile', 'uses' =>'UsersController@manageProfile']); 
+Route::post('/handleVerify', ['as' => 'handleVerify', 'uses' =>'UsersController@handleVerify']);

@@ -11,6 +11,18 @@ class City extends Model
         'id', 'name'
     ];
 
+    public static function findById($id){
+        $obj = DB::table('m_city')->where('id', $id)->first();
+        return $obj;
+    }
+
+    public static function getSingleColumn($id, $column){
+        $obj = DB::table('m_city')
+            ->select($column)
+            ->where('id', $id)
+            ->first();
+        return $obj;
+    }
 
     public static function get()
     {

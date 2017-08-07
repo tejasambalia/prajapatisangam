@@ -38,9 +38,9 @@
   				</div>
   				<div class="nav-links">
   					<ul class="list-unstyled">
-  						<li><a href="#"> <i class="fa fa-user" aria-hidden="true"></i> profile </a></li>
+  						<li><a href="{{ url('/handleProfile') }}"> <i class="fa fa-user" aria-hidden="true"></i> profile </a></li>
               <li><a href="#"> Home </a></li>
-  						<li><a href="#"> create family tree </a></li>
+  						<li><a href="{{ url('/familyTree') }}"> create family tree </a></li>
   						<!-- <li><a href="#"> trending now </a></li>
   						<li><a href="#"> categories </a></li>
   						<li><a href="#"> history </a></li> -->

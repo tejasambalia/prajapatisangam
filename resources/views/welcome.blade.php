@@ -60,20 +60,12 @@
                                 <div class="align-center text-left">
                                     <span class="small-hr" style="background-color: #FF1D4D;"></span>
                                     <p class="" style="font-size: 25px; text-transform: uppercase;">Feel proud for being Prajapati</p>
-                                    <div class="type-wrap text-left">
-                                        <h1  class="">Coming Soon</h1>
+                                    <div class="notify-btn main-menu">
+                                        <button type="button" class="btn btn-default"><span class="button-label text-left" onclick="location.href = '{{ url('/signin') }}';">Sign In</span></button>
                                     </div>
-
-                                    <p class="wellcome-text">Hello..</p>
-                                    <form id="notifyMe" class="contact-form" action="subscribe.php" method="post">
-                                        <div class="input-wrap">
-                                            <input class="col-lg-10  align-center form-control input input__field input__field--hoshi notify-input-box" name="contact" placeholder="enter contact number"  type="text">
-                                            <label class="input__label input__label--hoshi input__label--hoshi-color-1"></label>
-                                        </div>
-                                        <div class="notify-btn main-menu">
-                                            <button type="submit" class="btn btn-default"><span class="button-label text-left">Notify me</span><span class="arrow-wrap"><span class="arrow"></span></span></button>
-                                        </div>
-                                    </form>
+                                    <div class="notify-btn main-menu">
+                                        <button type="button" class="btn btn-default"><span class="button-label text-left" onclick="location.href = '{{ url('/signup') }}';">Sign Up</span></button>
+                                    </div>
                                 </div>      
                             </section>
                             <!--/Content with Typing Intro-->
@@ -121,11 +113,13 @@
                         
                         <div class="counter-content">
                             <div class="col-lg-8 col-md-9 col-sm-9 col-xs-9 align-center text-left">
-                                <p class="tagline">India's first platform for Prajapati where people can meet and stay connected with each other.</p>
+                                <p class="tagline">Platform for Prajapati</p>
                                 <span class="small-hr" style="background-color: #FF1D4D;"></span>
-                                <p class="tagline">Don't be a hidden star, Show your talent to the Prajapati community.</p>
+                                <p class="tagline">Signup and connect with Prajapati</p>
                                 <span class="small-hr" style="background-color: #FF1D4D;"></span>
-                                <p class="tagline">Get news updates of Prajapati.</p>
+                                <p class="tagline">Don't be a hidden star, Just show your talent</p>
+                                <span class="small-hr" style="background-color: #FF1D4D;"></span>
+                                <p class="tagline">Get news updates of Prajapati</p>
                                 <span class="small-hr" style="background-color: #FF1D4D;"></span>
                                 
                             </div>  
