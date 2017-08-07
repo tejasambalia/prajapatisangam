@@ -206,7 +206,7 @@ class UsersController extends Controller
     $data = $request->only('firstName', 'middleName', 'surnameId', 'birthDate', 'gender', 'married', 'phone', 'email', 'website', 'homeTown', 'education', 'occupation', 'about', 'thoughts', 'address', 'state', 'city', 'Pincode', 'relationSelect');
     
     $data['user_id'] = \Auth::user()->id;
-    $data['relationSelect'] = ($data['relationSelect']==''?'0':$data['relationSelect']);
+    $data['relationSelect'] = ($data['relationSelect']==''?'1':$data['relationSelect']);
     $data['relationCreated'] = '0';
 
     $addressObj = UserAddress::add($data);
@@ -228,7 +228,7 @@ class UsersController extends Controller
     $data = $request->only('firstName', 'middleName', 'surnameId', 'birthDate', 'gender', 'married', 'phone', 'email', 'website', 'homeTown', 'education', 'occupation', 'about', 'thoughts', 'address', 'state', 'city', 'Pincode', 'relationSelect');
 
     $data['user_id'] = \Auth::user()->id;
-    $data['relationSelect'] = ($data['relationSelect']==''?'0':$data['relationSelect']);
+    $data['relationSelect'] = ($data['relationSelect']==''?'1':$data['relationSelect']);
     
     $userObj = UserData::updateProfile($data);
     $data['addressId'] = $userObj->addressId;
