@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title id="">Prajapati Sangam | comming soon | Prajapati community | Prajapati | feel proud to be prajapati</title>
         <meta name="description" content="Prajapati Sangam is National level community" />
-        <meta name="keywords" content="Prajapati, Prajapati sangam, prajapatisangam, ps, sangam, prajapati network, prajapati community, community, prajapati news, prajapati updates" />
+        <meta name="keywords" content="Prajapati, Prajapati sangam, prajapatisangam, ps, sangam, prajapati network, prajapati community, community, prajapati news, prajapati updates, prajapati samaj, prajapati family tree, family tree, prajapati india, prajapati gujarat, prajapati jamnagar, prajapati rajkot, prajapati ahmedabad, prajapati mumbai, prajapati group, prajapati caste, prajapati gotra, prajapati app, prajapati e paper" />
         <meta name="author" content="prajapati" />
         
         <link rel="shortcut icon" href="favicon.ico">
