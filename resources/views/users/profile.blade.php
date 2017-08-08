@@ -82,8 +82,13 @@ if($profileAdded){
                 <p>{!! $userData->email !!}</p>
                 <h4 class="profile_sub_title">Address</h4>
                 <ul class="list-unstyled">
+                    <?php if($userAddress->address!=''){ ?>
                     <li>{!! nl2br($userAddress->address) !!}</li>
-                    <li>{!! $userCity->name !!},</li><li>{!! $userState->name !!} - {!! $userAddress->pincode !!}</li>
+                    <?php } ?>
+                    <?php if($userAddress->cityId!='0'){ ?>
+                    <li>{!! $userCity->name !!},</li>
+                    <?php } ?>
+                    <li><?php if($userAddress->stateId!='0'){ ?>{!! $userState->name !!}<?php } ?> - {!! $userAddress->pincode !!}</li>
                 </ul>
                 <!-- <h4 class="profile_sub_title"><span> Social Connections </span></h4>
                 <ul class="list-inline profile_social space10">
