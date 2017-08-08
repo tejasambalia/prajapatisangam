@@ -44,7 +44,8 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $e)
-    {
-        return parent::render($request, $e);
+    {   
+        //return parent::render($request, $e);
+        return response()->view('errors.custom');
     }
 }
