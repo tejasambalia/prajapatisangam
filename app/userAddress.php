@@ -28,7 +28,7 @@ class UserAddress extends Model
             'address'           => $data['address'],
             'cityId' 		    => $data['city'],
             'stateId' 		    => $data['state'],
-            'pincode' 		    => $data['Pincode']
+            'pincode' 		    => $data['pincode']
         ]);
 
         $addressId = DB::table('userAddress')
@@ -44,7 +44,7 @@ class UserAddress extends Model
                 'address'           => $data['address'],
                 'cityId'            => $data['city'],
                 'stateId'           => $data['state'],
-                'pincode'           => $data['Pincode']
+                'pincode'           => $data['pincode']
             ]);
     }
 }

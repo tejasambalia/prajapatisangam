@@ -94,13 +94,13 @@ if($profileAdded){
 
 ?>
 <!-- Edit button -->
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-12">
         <div class="col-md-offset-3 col-md-9">
             <input type="button" value="edit" id="mc-embedded-subscribe" class="button btn save_btn" onclick="location.href = '{{ url('/editFamilyTree') }}';">
         </div>
     </div>
-</div>
+</div> -->
 </section>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
