@@ -9,7 +9,7 @@ Class StateDropDown {
 	public function StateDropDown($selectId=null) {
 		$obj = new State;
 		$data = $obj->get();
-		$optionData = '<option>Select State</option>';
+		$optionData = '<option value="">Select State</option>';
 		if($selectId!=null){
 			foreach ($data as $d) {
 				$optionData .= '<option value="'.$d->id.'" ';

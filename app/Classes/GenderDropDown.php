@@ -7,7 +7,7 @@ Class GenderDropDown {
 				'0' => 'Female',
 				'1' => 'Male'
 			);
-		$optionData = '<option>Select Gender</option>';
+		$optionData = '<option value="">Select Gender</option>';
 		if($selectId!=null){			
 			foreach ($list as $key => $val) {
 				$optionData .= '<option value="'.$key.'"'; 

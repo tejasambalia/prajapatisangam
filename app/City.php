@@ -28,6 +28,7 @@ class City extends Model
     {
         $surnameObj = DB::table('m_city')
         	->select('id', 'name')
+            ->orderBy('name', 'asc')
         	->get();        	
         
         return $surnameObj;

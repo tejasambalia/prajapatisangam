@@ -28,6 +28,7 @@ class State extends Model
     {
         $surnameObj = DB::table('m_state')
         	->select('id', 'name')
+            ->orderBy('name', 'asc')
         	->get();        	
         
         return $surnameObj;

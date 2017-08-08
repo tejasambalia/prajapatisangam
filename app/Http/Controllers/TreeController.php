@@ -30,6 +30,7 @@ class TreeController extends Controller{
 	}
 
 	public function handleAddFamilyTree(Request $request){
+		$validator = $this->validate($request, UserData::$validateTreeData);
 		$personData = $request->only('firstName', 'middleName', 'surnameId', 'birthDate', 'gender', 'married', 'phone', 'email', 'website', 'homeTown', 'education', 'occupation', 'about', 'thoughts', 'address', 'state', 'city', 'Pincode', 'relationSelect');
 
 		//change key

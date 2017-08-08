@@ -10,7 +10,7 @@ Class SurnameDropDown {
 	public function SurnameDropDown($selectId=null) {
 		$surnameObj = new Surname;
 		$surnameData = $surnameObj->get();
-		$optionData = '<option>Select Surname</option>';
+		$optionData = '<option value="">Select Surname</option>';
 		if($selectId!=null){
 			foreach ($surnameData as $data) {
 				$optionData .= '<option value="'.$data->id.'" ';

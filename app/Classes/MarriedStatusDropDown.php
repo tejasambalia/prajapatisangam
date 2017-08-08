@@ -10,7 +10,7 @@ Class MarriedStatusDropDown {
 			);
 
 
-		$optionData = '<option>Select Married Status</option>';
+		$optionData = '<option value="">Select Married Status</option>';
 		if($selectId!=null){			
 			foreach ($list as $key => $val) {
 				$optionData .= '<option value="'.$key.'"'; 

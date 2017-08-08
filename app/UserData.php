@@ -19,8 +19,17 @@ class UserData extends Model
     	'surnameId' 		=> 'required',
     	'birthDate' 		=> 'required',
     	'gender' 			=> 'required',
-    	'married' 			=> 'required',
-    	'relationSelect' 	=> 'required'
+    	'married' 			=> 'required'
+    ];
+
+    public static $validateTreeData = [
+        'firstName'         => 'required',
+        'middleName'        => 'required',
+        'surnameId'         => 'required',
+        'birthDate'         => 'required',
+        'gender'            => 'required',
+        'married'           => 'required',
+        'relationSelect'    => 'required'
     ];
 
 
