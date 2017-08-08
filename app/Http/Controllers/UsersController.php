@@ -65,7 +65,7 @@ class UsersController extends Controller
 
     $msg = 'We have send you verification code please verify it';
     session(['msg' => $msg]);
-    return redirect()->route('signin');
+    return redirect()->route('verify');
   }
 
   public function handleSignin(Request $request){
