@@ -225,9 +225,7 @@ class UsersController extends Controller
 
   public function handleEditProfile(Request $request){
     $validator = $this->validate($request, UserData::$validateData);
-    $data = $request->only('firstName', 'middleName', 'surnameId', 'birthDate', 'gender', 'married', 'phone', 'email', 'website', 'homeTown', 'education', 'occupation', 'about', 'thoughts', 'address', 'state', 'city', 'pincode', 'relationSelect');
-    echo "<pre>";
-    print_r($data);die();
+    $data = $request->only('id', 'firstName', 'middleName', 'surnameId', 'birthDate', 'gender', 'married', 'phone', 'email', 'website', 'homeTown', 'education', 'occupation', 'about', 'thoughts', 'address', 'state', 'city', 'pincode', 'relationSelect');
 
     $data['user_id'] = \Auth::user()->id;
     $data['relationSelect'] = ($data['relationSelect']==''?'1':$data['relationSelect']);

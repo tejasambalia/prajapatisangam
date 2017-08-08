@@ -77,7 +77,10 @@ class UserData extends Model
 
     public static function updateProfile($data){
         DB::table('userData')
-            ->where('user_id', $data['user_id'])
+            ->where([
+                ['user_id', '=', $data['user_id']],
+                ['id', '=', $data['id']]
+            ])
             ->update([
                 'firstName'         => $data['firstName'],
                 'middleName'        => $data['middleName'],
