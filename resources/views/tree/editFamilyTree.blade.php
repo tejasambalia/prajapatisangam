@@ -29,7 +29,6 @@ if($familyTreeAdded){
 }
 
 $RelationObj = new RelationDropDown;
-$RelationDropDown = $RelationObj->RelationDropDown($userData->relationSelect);
 
 $SurnameObj = new SurnameDropDown;
 $SurnameDropDown = $SurnameObj->SurnameDropDown($userData->surnameId);
@@ -64,11 +63,18 @@ else{
 }
 ?>
 {!! Form::token() !!}
+
 <section class="profile_details">
 <?php
 foreach ($userData as $data) {
-	$userRelation = Relation::getSingleColumn($data->relationSelect, 'name');
+	if($data->relationSelect!='1'){
+		$RelationDropDown = $RelationObj->RelationDropDown($data->relationSelect);
+	}
+	else{
+		$RelationDropDown = $RelationObj->SelfRelationDropDown($data->relationSelect);	
+	}
 ?>
+	{{ Form::hidden('id[]', $data->id) }}
     <div class="container">
     	<div id="treeContainer">
     		<div id="firstTreeChild">

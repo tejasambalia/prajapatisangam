@@ -60,6 +60,24 @@ class TreeController extends Controller{
 	}
 
 	public function handleEditFamilyTree(Request $request){
+		$validator = $this->validate($request, UserData::$validateTreeData);
+		$personData = $request->only('id', 'firstName', 'middleName', 'surnameId', 'birthDate', 'gender', 'married', 'phone', 'email', 'website', 'homeTown', 'education', 'occupation', 'about', 'thoughts', 'address', 'state', 'city', 'Pincode', 'relationSelect');
 
+		//change key
+		foreach ($personData as $outerKey => $postData) {
+			$count = count($postData);
+			for ($i=0; $i < $count; $i++) { 
+				$newData[$i][$outerKey] = $postData[$i];
+			}
+		}
+
+		foreach ($newData as $data) {
+			$data['user_id'] = \Auth::user()->id;
+			$data['relationCreated'] = '0';
+
+			$userObj = UserData::updateTreeProfile($data);
+		}
+
+		return redirect()->route('familyTree');
 	}
 }

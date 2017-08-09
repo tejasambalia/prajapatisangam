@@ -1,0 +1,71 @@
+@extends('header')
+@section('content')
+
+<link rel="stylesheet" type="text/css" href="css/select2.css"></link>
+<link rel="stylesheet" type="text/css" href="css/datepicker3.css"></link>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-tagsinput.css"></link>
+<link rel="stylesheet" type="text/css" href="css/typeahead.css"></link>
+<link rel="stylesheet" type="text/css" href="css/editable.css">
+<?php
+use App\UserData;
+use App\UserAddress;
+use App\Surname;
+use App\State;
+use App\City;
+
+$userData = array();
+$userAddress = array();
+$userData = new userData();
+$userAddress = new UserAddress();
+
+$profileAdded = \Auth::user()->profile_created;
+$userId = \Auth::user()->id;
+
+?>
+
+<section class="profile_details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="">YOU HAVE SEARCHED FOR: {!! $data['search'] !!}</h3>
+                <h3 class="">Results</h3>
+                <?php foreach ($result as $res) {
+                    $searchRes = UserData::findById($res->id);
+                    $userAddress = UserAddress::findById($searchRes->addressId);
+
+                    $userSurname = Surname::getSingleColumn($searchRes->surnameId, 'name');
+                    $userCity = City::getSingleColumn($userAddress->cityId, 'name');
+                    $userState = State::getSingleColumn($userAddress->stateId, 'name');
+                ?>
+                <div class="searchResult" style="border: 1px solid; margin: 2px; padding: 2px;">
+                <p>
+                    Prajapati {!! $searchRes->firstName !!} {!! $searchRes->middleName !!} {!! $userSurname->name !!}
+                </p>
+                <p>
+                    {!! $userCity->name !!}, {!! $userState->name !!}
+                </p>
+                </div>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- <script src="js/vendors.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Syntaxhighlighter -->
+<script type="text/javascript" src="js/select2.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
+<script type="text/javascript" src="js/typeahead.bundle.js"></script>
+<script src="js/editstrap.min.js"></script>
+
+<script type="text/javascript">
+        $("#textId").editstrap();
+</script>
+
+
+@endsection

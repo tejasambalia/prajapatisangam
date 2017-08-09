@@ -39,12 +39,10 @@
   				<div class="nav-links">
   					<ul class="list-unstyled">
   						<li><a href="{{ url('/handleProfile') }}"> <i class="fa fa-user" aria-hidden="true"></i> profile </a></li>
-              <li><a href="#"> Home </a></li>
-  						<li><a href="{{ url('/familyTree') }}"> create family tree </a></li>
-  						<!-- <li><a href="#"> trending now </a></li>
-  						<li><a href="#"> categories </a></li>
-  						<li><a href="#"> history </a></li> -->
-  						<li><a href="{{ url('/logout') }}"> logout </a></li>
+              <li><a href="{{ url('/') }}"> <i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+  						<li><a href="{{ url('/familyTree') }}"> <i class="fa fa-tree" aria-hidden="true"></i> create family tree </a></li>
+  						<li><a role="button" data-toggle="modal" data-target="#myModal_search"> <i class="fa fa-search" aria-hidden="true"></i> search </a></li>
+  						<li><a href="{{ url('/logout') }}"> <i class="fa fa-sign-out" aria-hidden="true"></i> logout </a></li>
   					</ul>
   				</div>
   			</div>
@@ -78,6 +76,26 @@
     <!-- Body part start -->
 	@yield('content')
 	<!-- Body part end -->
+
+  <!-- Search Modal -->
+  <div class="modal search_modal fade" id="myModal_search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <h3 class="search_title"> What are you looking for?  </h3>
+                  <form class="main-search" method="get" action="{{ url('/search') }}">
+                      <div class="form-group">
+                          <input type="search" name="search" class="form-control" placeholder="Write search text here...">
+                          <button type="submit" class="btn"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                      </div>
+
+                      <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+                  </form>
+                  <h2 class="search_tag_line"> We are here to <span class="blue_clr">help you</span></h2>
+              </div>
+          </div>
+      </div>
+  </div>
 
 	<!-- Footer part start -->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

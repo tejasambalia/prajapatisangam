@@ -21,6 +21,9 @@ Route::get('/index', function(){
 
 Route::get('/logout', ['as' => 'logout', 'uses' => 'UsersController@logout']);
 
+//search
+Route::get('/search', ['middleware' => 'auth', 'as' => 'search', 'uses' => 'SearchController@search']);
+
 //Profile
 Route::get('/handleProfile', ['middleware' => 'auth', 'as' => 'handleProfile', 'uses' => 'UsersController@handleProfile']);
 Route::get('/profile', ['middleware' => 'auth', 'as' => 'profile', 'uses' => 'UsersController@profile']);

@@ -38,6 +38,11 @@ class UserData extends Model
         $profileObj = DB::table('userData')->where('user_id', $userId)->first();
         return $profileObj;
     }
+    public static function findById($id)
+    {
+        $profileObj = DB::table('userData')->where('id', $id)->first();
+        return $profileObj;
+    }
 
     public static function getSingleColumnData($userId, $columnName){
         $profileObj = DB::table('userData')->where('user_id', $userId)->select($columnName)->first();
@@ -105,5 +110,31 @@ class UserData extends Model
             ->first();
 
         return $addressId;
+    }
+
+    public static function updateTreeProfile($data){
+        DB::table('userData')
+            ->where([
+                ['user_id', '=', $data['user_id']],
+                ['id', '=', $data['id']]
+            ])
+            ->update([
+                'firstName'         => $data['firstName'],
+                'middleName'        => $data['middleName'],
+                'surnameId'         => $data['surnameId'],
+                'birthDate'         => $data['birthDate'],
+                'gender'            => $data['gender'],
+                'married'           => $data['married'],
+                'phone'             => $data['phone'],
+                'email'             => $data['email'],
+                'website'           => $data['website'],
+                'homeTown'          => $data['homeTown'],
+                'education'         => $data['education'],
+                'occupation'        => $data['occupation'],
+                'about'             => $data['about'],
+                'thoughts'          => $data['thoughts'],
+                'relationSelect'    => $data['relationSelect'],
+                'relationCreated'   => $data['relationCreated']
+            ]);
     }
 }

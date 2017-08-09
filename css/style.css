@@ -1065,3 +1065,77 @@ header {
 .grid-item--width2 { width: 25%; }
 
 /*===================== Home Ends here  ======================*/
+
+.search_modal {
+    padding-right: 0 !important;
+}
+
+.search_modal,
+.search_modal .modal-content {
+    height: 100%;
+    width: 100%;
+}
+
+.search_modal .modal-dialog {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.search_modal .modal-content {
+    border: 0;
+    border-radius: 0;
+    background: #eee;
+}
+
+.main-search {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.main-search .form-group {
+    position: relative;
+}
+
+.main-search .form-control {height: 55px;box-shadow: none;border: 1px solid #ddd;margin-top: 20px;padding: 6px 23px;font-size: 19px;}
+
+.main-search .btn {
+    background: transparent;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    font-size: 22px;
+}
+
+.search_title {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 100px;
+    line-height: 1.4;
+}
+
+.search_tag_line {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+    line-height: 1.4;
+}
+
+.search_title.text-left {
+    text-align: left;
+}
+
+.close-modal {
+    background: transparent;
+    border: 0;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.close-modal:focus {
+    outline: 0;
+}

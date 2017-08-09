@@ -9,7 +9,7 @@ Class RelationDropDown {
 	public function RelationDropDown($selectId=null) {
 		$obj = new Relation;
 		$data = $obj->get();
-		$optionData = '<option>Select Relation</option>';
+		$optionData = '<option value="">Select Relation</option>';
 		if($selectId!=null){
 			foreach ($data as $d) {
 				$optionData .= '<option value="'.$d->id.'" ';
@@ -22,6 +22,11 @@ Class RelationDropDown {
 				$optionData .= '<option value="'.$d->id.'">'.$d->name.'</option>';
 			}
 		}
+		return $optionData;
+	}
+
+	public function SelfRelationDropDown($selectId=null) {
+		$optionData = '<option value="1">Self</option>';
 		return $optionData;
 	}
 }
