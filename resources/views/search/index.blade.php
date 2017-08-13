@@ -39,10 +39,18 @@ $userId = \Auth::user()->id;
                 ?>
                 <div class="searchResult" style="border: 1px solid; margin: 2px; padding: 2px;">
                 <p>
-                    Prajapati {!! $searchRes->firstName !!} {!! $searchRes->middleName !!} {!! $userSurname->name !!}
+                    Prajapati {!! $searchRes->firstName !!} {!! $searchRes->middleName !!}
+                    <?php if($searchRes->surnameId!=0){ ?> 
+                        {!! $userSurname->name !!} 
+                    <?php } ?>
                 </p>
                 <p>
-                    {!! $userCity->name !!}, {!! $userState->name !!}
+                    <? if($userAddress->cityId!=0){ ?>
+                        {!! $userCity->name !!},
+                    <? } ?>
+                    <? if($userAddress->stateId){ ?>
+                        {!! $userState->name !!}
+                    <? } ?>
                 </p>
                 </div>
                 <?php

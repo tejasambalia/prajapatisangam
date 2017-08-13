@@ -16,8 +16,6 @@ Class SearchLogic {
 			->orWhere('homeTown', 'like', $searchText)
 			->orWhere('education', 'like', $searchText)
 			->orWhere('occupation', 'like', $searchText)
-			->orWhere('about', 'like', $searchText)
-			->orWhere('thoughts', 'like', $searchText)
 			->select('id')
 			->get();
 
