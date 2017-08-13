@@ -9,13 +9,13 @@
     <title>Board</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Proza+Libre:400,400i,500,500i" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome-4.7.0/css/font-awesome.css') }}">
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="css/iptools-jquery-offcanvas.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/iptools-jquery-offcanvas.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +25,7 @@
     <![endif]-->
   </head>
   <body>
-
+    @if(\Auth::user())
   	<aside id="my-navigation" class="offcanvas">
   		<nav>
   			<div class="navigation">
@@ -48,6 +48,7 @@
   			</div>
   		</nav>
   	</aside>
+    @endif
 
 	
 
@@ -55,19 +56,23 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          @if(\Auth::user())
 					<button data-offcanvas-open="my-navigation" class="btn open-btn"><i class="ion-navicon"></i></button>
+          @endif
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 					<div class="main-logo">
 						<a href="#" class="site-logo-text">PRAJAPATI SANGAM<!-- <img src="img/Logo-1-white.png" class="img-responsive center-block" height="50"> --></a>
 					</div>
 				</div>
+        @if(\Auth::user())
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: right;">
 					<div class="top-profile nav-options">
             <a href="#" class="nav-option-link">Home</a>
             <a href="{{ url('/logout') }}" class="nav-option-link">Logout</a>
 					</div>
 				</div>
+        @endif
 			</div>
 		</div>
 	</header>
@@ -101,8 +106,8 @@
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/iptools-jquery-offcanvas.js"></script>
+    <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/iptools-jquery-offcanvas.js') }}"></script>
     <script type="text/javascript">
     	$(document).ready(function () {
 	        $('#my-navigation').iptOffCanvas({

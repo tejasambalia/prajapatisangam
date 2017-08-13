@@ -27,6 +27,7 @@ Route::get('/search', ['middleware' => 'auth', 'as' => 'search', 'uses' => 'Sear
 //Profile
 Route::get('/handleProfile', ['middleware' => 'auth', 'as' => 'handleProfile', 'uses' => 'UsersController@handleProfile']);
 Route::get('/profile', ['middleware' => 'auth', 'as' => 'profile', 'uses' => 'UsersController@profile']);
+Route::get('/profile/{userName}/{userId}', ['as' => 'openProfile', 'uses' => 'UsersController@openProfile']);
 Route::get('/addProfile', ['middleware' => 'auth', 'as' => 'addProfile', 'uses' => 'UsersController@addProfile']);
 Route::post('/handleAddProfile', ['middleware' => 'auth', 'as' => 'handleAddProfile', 'uses' => 'UsersController@handleAddProfile']);
 Route::get('/editProfile', ['middleware' => 'auth', 'as' => 'editProfile', 'uses' => 'UsersController@addProfile']);

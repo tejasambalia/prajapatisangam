@@ -243,6 +243,10 @@ class UsersController extends Controller
     return view('users.profile');
   }
 
+  public function openProfile($userName, $userId){
+    return view('users.openProfile', compact('userId'));
+  }
+
   public function handleProfile(){
     $profileCreated = \Auth::user()->profile_created;
     if($profileCreated){

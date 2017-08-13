@@ -27,8 +27,18 @@ $userId = \Auth::user()->id;
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <form class="main-search" method="get" action="{{ url('/search') }}">
+                    <div class="form-group">
+                        <input type="search" name="search" class="form-control" placeholder="Write search text here...">
+                        <button type="submit" class="btn"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                    </div>
+                </form>
                 <h3 class="">YOU HAVE SEARCHED FOR: {!! $data['search'] !!}</h3>
+                @if(count($result)>0)
                 <h3 class="">Results</h3>
+                @else
+                <h3 class="">No results found</h3>
+                @endif
                 <?php foreach ($result as $res) {
                     $searchRes = UserData::findById($res->id);
                     $userAddress = UserAddress::findById($searchRes->addressId);
@@ -36,8 +46,10 @@ $userId = \Auth::user()->id;
                     $userSurname = Surname::getSingleColumn($searchRes->surnameId, 'name');
                     $userCity = City::getSingleColumn($userAddress->cityId, 'name');
                     $userState = State::getSingleColumn($userAddress->stateId, 'name');
+
+                    $profileURL = URL::asset('/profile/'.$searchRes->firstName.'/'.$res->id);
                 ?>
-                <div class="searchResult" style="border: 1px solid; margin: 2px; padding: 2px;">
+                <div class="searchResult" style="border: 1px solid; margin: 2px; padding: 2px;" onclick="location.href='{{ $profileURL }}'">
                 <p>
                     Prajapati {!! $searchRes->firstName !!} {!! $searchRes->middleName !!}
                     <?php if($searchRes->surnameId!=0){ ?> 
