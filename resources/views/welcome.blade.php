@@ -66,6 +66,9 @@
                                     <div class="notify-btn main-menu">
                                         <button type="button" class="btn btn-default"><span class="button-label text-left" onclick="location.href = '{{ url('/signup') }}';">Sign Up</span></button>
                                     </div>
+                                    <div class="notify-btn main-menu">
+                                        <button type="button" class="btn btn-default"><span class="button-label text-left" onclick="location.href = '{{ url('/verify') }}';">Verify</span></button>
+                                    </div>
                                 </div>      
                             </section>
                             <!--/Content with Typing Intro-->
