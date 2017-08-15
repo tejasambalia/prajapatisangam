@@ -56,6 +56,12 @@ class TreeController extends Controller{
 	      ->where('id', \Auth::user()->id)
 	      ->update(['familytree_created' => '1']);
 
+	    //insert in relation_create
+      	DB::table('relation_created')->insert([
+			'family_id' => \Auth::user()->id,
+			'inserted_relationship_table' => '0'
+		]);
+
 	    return redirect()->route('familyTree');
 	}
 

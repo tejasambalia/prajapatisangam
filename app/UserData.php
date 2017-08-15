@@ -49,6 +49,11 @@ class UserData extends Model
         return $profileObj;
     }
 
+    public static function getSingleColumn($id, $columnName){
+        $profileObj = DB::table('userData')->where('id', $id)->select($columnName)->first();
+        return $profileObj;   
+    }
+
     public static function getTreeDetails($userId){
         $obj = DB::table('userData')
             ->where('user_id', $userId)

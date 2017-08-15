@@ -9,12 +9,18 @@
 <?php
 use App\UserData;
 use App\Surname;
+use App\Relation;
+use App\Classes\GetRelatives;
 
 $userData = array();
 $userData = new userData();
 $userData = UserData::findById($userId);
 
 $userSurname = Surname::getSingleColumn($userData->surnameId, 'name');
+
+//get relatives info
+$RelativesObj = new GetRelatives;
+$RelativesData = $RelativesObj->get($userId);
 
 //calculate age
 $from = new DateTime($userData->birthDate);
@@ -79,6 +85,37 @@ $age  = $from->diff($to)->y;
                 <p>
                     {!! nl2br($userData->thoughts) !!}
                 </p>
+                @if(count($RelativesData)>0)
+                <h3 class="profile_title"><span> relatives </span></h3>
+                <div class="portfolio_box">
+                    <ul class="list-inline">
+                        @foreach ($RelativesData as $user)
+                        <?php
+                            if($user->child_userData_id==$userId){
+                                $tempUserId = $user->parent_userData_id; 
+                                $tempRelationId = $user->child_to_parent_relation;
+                            }
+                            else{
+                                $tempUserId = $user->child_userData_id; 
+                                $tempRelationId = $user->parent_to_child_relation;
+                            }
+                            $firstName = Userdata::getSingleColumn($tempUserId, 'firstName');
+                            $middleName = Userdata::getSingleColumn($tempUserId, 'middleName');
+                            $usrnameId = Userdata::getSingleColumn($tempUserId, 'surnameId');
+                            $surname = Surname::getSingleColumn($usrnameId->surnameId, 'name');
+                            $relation = Relation::getSingleColumn($tempRelationId, 'name');
+                            $profileURL = URL::asset('/profile/'.$firstName->firstName.'/'.$tempUserId);
+                        ?>
+                            <li class="relativesBlock" onclick="location.href='{{ $profileURL }}'">
+                                <span class="relationName">{!! $relation->name !!}</span><br>
+                                {!! $firstName->firstName !!}<br>
+                                {!! $middleName->middleName !!}<br>
+                                {!! $surname->name !!}<br>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
             </div>
         </div>
     </div>

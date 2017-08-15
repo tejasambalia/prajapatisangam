@@ -103,6 +103,14 @@
   </div>
 
 	<!-- Footer part start -->
+  <footer>
+    <div class="small-print">
+        <div class="container">
+            <p><a href="{{ url('/terms') }}">Terms of use</a></p>
+            <p>Copyright &copy; prajapatisangam.com 2017 </p>
+        </div>
+    </div>
+  </footer>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
