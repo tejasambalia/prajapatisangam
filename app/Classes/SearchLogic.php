@@ -26,7 +26,6 @@ Class SearchLogic {
 			//check search text in user information
 			$resultAddress = DB::table('userData')
 				->where('firstName', 'like', $searchText)
-				->orWhere('middleName', 'like', $searchText)
 				->orWhere('surnameId', '=', $surnameId)
 				->orWhere('website', 'like', $searchText)
 				->orWhere('homeTown', 'like', $searchText)
