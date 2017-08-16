@@ -1,5 +1,13 @@
+<?php
+use Illuminate\Routing\Route;
+$actionName = app('request')->route()->getAction();
+?>
 <!DOCTYPE html>
+@if($actionName['as']=='openProfile')
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+@else
 <html lang="en">
+@endif
   <head>
     
     <meta charset="utf-8">

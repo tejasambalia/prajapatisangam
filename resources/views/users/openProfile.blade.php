@@ -39,7 +39,7 @@ $age  = $from->diff($to)->y;
             </div>
             <div class="col-md-8">
                 <div class="profile_title_box">
-                    <h1 class="profile_name">Prajapati {!! $userData->firstName !!} {!! $userData->middleName; !!} {!! $userSurname->name !!}</h1>
+                    <h1 class="profile_name"><span itemprop="honorificPrefix">Prajapati</span> <span itemprop="givenName">{!! $userData->firstName !!}</span> <span itemprop="additionalName">{!! $userData->middleName; !!}</span> <span itemprop="familyName">{!! $userSurname->name !!}</span></h1>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@ $age  = $from->diff($to)->y;
                 <h4 class="profile_sub_title">Age</h4>
                 <p>{!! $age !!} Years</p>
                 <h4 class="profile_sub_title">Gender</h4>
-                <p><?php
+                <p itemprop="gender"><?php
                     if($userData->gender){
                         echo "Male";
                     }
@@ -72,9 +72,15 @@ $age  = $from->diff($to)->y;
                     }
                 ?></p>
                 <h4 class="profile_sub_title">Website</h4>
-                <p><a href="http://{!! $userData->website !!}" target="_blank">{!! $userData->website !!}</a></p>
+                <p><a href="http://{!! $userData->website !!}" target="_blank" itemprop="url">{!! $userData->website !!}</a></p>
                 <h4 class="profile_sub_title">Email</h4>
-                <p>{!! $userData->email !!}</p>
+                <p itemprop="email">{!! $userData->email !!}</p>
+                <h4 class="profile_sub_title">Home Town</h4>
+                <p itemprop="birthPlace">{!! $userData->homeTown !!}</p>
+                <h4 class="profile_sub_title">Education</h4>
+                <p>{!! $userData->education !!}</p>
+                <h4 class="profile_sub_title" itemprop="jobTitle">Occupation</h4>
+                <p>{!! $userData->occupation !!}</p>
             </div>
             <div class="col-md-9 profile_right_box">
                 <h3 class="profile_title"><span> ABOUT YOU </span></h3>
@@ -106,7 +112,7 @@ $age  = $from->diff($to)->y;
                             $relation = Relation::getSingleColumn($tempRelationId, 'name');
                             $profileURL = URL::asset('/profile/'.$firstName->firstName.'/'.$tempUserId);
                         ?>
-                            <li class="relativesBlock" onclick="location.href='{{ $profileURL }}'">
+                            <li class="relativesBlock" onclick="location.href='{{ $profileURL }}'" itemprop="url">
                                 <span class="relationName">{!! $relation->name !!}</span><br>
                                 {!! $firstName->firstName !!}<br>
                                 {!! $middleName->middleName !!}<br>
