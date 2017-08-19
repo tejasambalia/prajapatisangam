@@ -53,9 +53,6 @@ Route::get('/verify', ['as' => 'verify', 'uses' =>'UsersController@verify']);
 Route::post('/handleVerify', ['as' => 'handleVerify', 'uses' =>'UsersController@handleVerify']);
 
 //static company policy
-Route::get('/terms', function(){
-	return view('static.terms');
-});
-
+Route::get('/terms', ['as' => 'terms', 'uses' =>'StaticpageController@terms']); 
 //cron
 Route::get('/createRelation', ['as' => 'createRoute', 'uses' => 'CronController@createRelation']);
