@@ -114,7 +114,7 @@ $actionName = app('request')->route()->getAction();
   <footer>
     <div class="small-print">
         <div class="container">
-            <p><a href="{{ url('/terms') }}">Terms of use</a></p>
+            <p><a href="{{ url('/terms') }}">Terms of use</a> | <a href="{{ url('/faqs') }}">FAQs</a></p>
             <p>Copyright &copy; prajapatisangam.com 2017 </p>
         </div>
     </div>

@@ -54,5 +54,6 @@ Route::post('/handleVerify', ['as' => 'handleVerify', 'uses' =>'UsersController@
 
 //static company policy
 Route::get('/terms', ['as' => 'terms', 'uses' =>'StaticpageController@terms']); 
+Route::get('/faqs', ['as' => 'faqs', 'uses' =>'StaticpageController@faqs']); 
 //cron
 Route::get('/createRelation', ['as' => 'createRoute', 'uses' => 'CronController@createRelation']);
