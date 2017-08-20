@@ -11,4 +11,12 @@ class StaticpageController extends Controller{
 	public function faqs(){
 		return view('static.faqs');
 	}
+
+	public function welcome(){
+		return view('welcome');
+	}
+
+	public function test(){
+		return view('welcome__');
+	}
 }

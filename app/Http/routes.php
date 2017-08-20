@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => '/', 'uses' => 'StaticpageController@welcome']);
 
-Route::get('/index', function(){
-	return view('welcome');
-});
+Route::get('/test', ['as' => 'test', 'uses' => 'StaticpageController@test']);
 
 Route::get('/logout', ['as' => 'logout', 'uses' => 'UsersController@logout']);
 

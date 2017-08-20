@@ -25,6 +25,10 @@ $actionName = app('request')->route()->getAction();
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/iptools-jquery-offcanvas.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css') }}">
 
+    <link rel="stylesheet" href="{{ URL::asset('css/assets/icon.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/assets/idangerous.swiper.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/assets/stylesheet.css') }}">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -70,13 +74,13 @@ $actionName = app('request')->route()->getAction();
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 					<div class="main-logo">
-						<a href="#" class="site-logo-text">PRAJAPATI SANGAM<!-- <img src="img/Logo-1-white.png" class="img-responsive center-block" height="50"> --></a>
+						<a href="{{ url('/') }}" class="site-logo-text"><!-- <img src="img/logo.png" class="img-responsive center-block" height="50"> -->PRAJAPATI SANGAM</a>
 					</div>
 				</div>
         @if(\Auth::user())
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: right;">
 					<div class="top-profile nav-options">
-            <a href="#" class="nav-option-link">Home</a>
+            <a href="{{ url('/') }}" class="nav-option-link">Home</a>
             <a href="{{ url('/logout') }}" class="nav-option-link">Logout</a>
 					</div>
 				</div>
@@ -111,13 +115,176 @@ $actionName = app('request')->route()->getAction();
   </div>
 
 	<!-- Footer part start -->
+  <!-- THE FOOTER -->
   <footer>
-    <div class="small-print">
-        <div class="container">
-            <p><a href="{{ url('/terms') }}">Terms of use</a> | <a href="{{ url('/faqs') }}">FAQs</a></p>
-            <p>Copyright &copy; prajapatisangam.com 2017 </p>
+    <!-- <div class="footer_slider">
+      <div class="swiper-container" data-autoplay="0" data-loop="1" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="4" data-sm-slides="8" data-md-slides="14" data-lg-slides="19" data-add-slides="19">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide active" data-val="0">
+                   <img class="img-responsive img-full" src="img/f1.jpg" alt="">
+                </div>
+                <div class="swiper-slide" data-val="1">
+                   <img class="img-responsive img-full" src="img/f2.jpg" alt="">               
+                </div>
+                <div class="swiper-slide" data-val="2">
+                   <img class="img-responsive img-full" src="img/f3.jpg" alt="">                 
+                </div>
+                <div class="swiper-slide" data-val="3">
+                   <img class="img-responsive img-full" src="img/f4.jpg" alt="">                   
+                </div>
+                <div class="swiper-slide" data-val="4">
+                   <img class="img-responsive img-full" src="img/f5.jpg" alt="">                   
+                </div>
+                <div class="swiper-slide" data-val="5">
+                   <img class="img-responsive img-full" src="img/f6.jpg" alt="">                 
+                </div>
+                <div class="swiper-slide" data-val="6">
+                   <img class="img-responsive img-full" src="img/f7.jpg" alt="">                   
+                </div>
+                <div class="swiper-slide" data-val="7">
+                   <img class="img-responsive img-full" src="img/f8.jpg" alt="">                   
+                </div>
+                <div class="swiper-slide" data-val="8">
+                   <img class="img-responsive img-full" src="img/f9.jpg" alt="">                   
+                </div>
+                <div class="swiper-slide" data-val="9">
+                   <img class="img-responsive img-full" src="img/f10.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="10">
+                   <img class="img-responsive img-full" src="img/f11.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="11">
+                   <img class="img-responsive img-full" src="img/f12.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="12">
+                   <img class="img-responsive img-full" src="img/f13.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="13">
+                   <img class="img-responsive img-full" src="img/f14.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="14">
+                   <img class="img-responsive img-full" src="img/f15.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="15">
+                   <img class="img-responsive img-full" src="img/f16.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="16">
+                   <img class="img-responsive img-full" src="img/f17.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="17">
+                   <img class="img-responsive img-full" src="img/f18.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="18">
+                   <img class="img-responsive img-full" src="img/f19.jpg" alt="">                  
+                </div>
+                <div class="swiper-slide" data-val="19">
+                   <img class="img-responsive img-full" src="img/f1.jpg" alt="">                   
+                </div>
+                <div class="swiper-slide" data-val="20">
+                   <img class="img-responsive img-full" src="img/f2.jpg" alt="">                   
+                </div>
+                <div class="swiper-slide" data-val="21">
+                   <img class="img-responsive img-full" src="img/f3.jpg" alt="">                   
+                </div>
+                <div class="swiper-slide" data-val="22">
+                   <img class="img-responsive img-full" src="img/f4.jpg" alt="">                   
+                </div>
+                <div class="swiper-slide" data-val="23">
+                   <img class="img-responsive img-full" src="img/f5.jpg" alt="">                   
+                </div>                                                                                
+              </div>
+              <div class="pagination hidden"></div>
+          </div>
+        </div>  --> 
+    <div class="footer-main">
+      <div class="container-fluid custom-container">
+        <div class="row"> 
+          <div class="col-md-3 col-xl-4">
+            <div class="footer-block">
+              <h1 class="footer-title">About Us</h1>
+              <p>Welcome home, Prajapati.<br>Prajapati Sangam is home to the world's largest community for prajapati. Here you can share your knowledge, experience, achievements, thoughts and memory.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-xl-2">
+            <div class="footer-block">
+              <h1 class="footer-title">Some Links</h1>
+              <div class="row footer-list-footer">
+                <div class="col-md-6">
+                <ul class="link-list">
+                  <li><a href="{{ url('/about') }}">About Us</a></li>
+                  <!-- <li><a href="blog-detail-2.html">Help</a></li> -->
+                  <li><a href="{{ url('/contacts') }}">Contacts</a></li>
+                  <!-- <li><a href="blog-detail-2.html">Job</a></li> -->
+                  <!-- <li><a href="blog-detail-2.html">Projets</a></li> -->
+                  <li><a href="{{ url('/faqs') }}">FAQs</a></li>
+                </ul></div>
+                <div class="col-md-6">
+                <ul class="link-list">
+                  <!-- <li><a href="blog-detail-2.html">New Works</a></li> -->
+                  <!-- <li><a href="blog-detail-2.html">Popular Authors</a></li> -->
+                  <!-- <li><a href="blog-detail-2.html">New Authors</a></li> -->
+                  <!-- <li><a href="blog-detail-2.html">Career</a></li> -->
+                  <!-- <li><a href="blog-detail-2.html">FAQ</a></li> -->
+                </ul></div>
+              </div>
+            </div>
+          </div>        
+          <!-- <div class="col-md-3 galerry">
+            <div class="footer-block">          
+              <h1 class="footer-title">Recent Works</h1>
+              <a href="blog-detail-2.html"><img src="img/g1.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g2.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g3.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g4.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g5.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g6.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g7.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g8.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g9.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g10.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g11.jpg" alt=""></a>
+              <a href="blog-detail-2.html"><img src="img/g12.jpg" alt=""></a>
+            </div>
+          </div> -->
+          <div class="col-md-3">
+            <div class="footer-block">
+              <h1 class="footer-title">Subscribe On Our News</h1>
+              <form action="./" class="subscribe-form">
+                <input type="text" placeholder="Your Email" required>
+                <div class="submit-block">
+                  <i class="fa fa-envelope-o"></i>
+                  <input type="submit" value="">
+                </div>
+              </form>
+              <!-- <div class="soc-activity">
+                <div class="soc_ico_triangle">
+                  <i class="fa fa-twitter"></i>
+                </div>
+                <div class="message-soc">
+                  <div class="date">16h ago</div>
+                  <a href="blog-detail-2.html" class="account">@faq</a> vestibulum accumsan est <a href="blog-detail-2.html" class="heshtag">blog-detail-2.htmlmalesuada</a> sem auctor, eu aliquet nisi ornare leo sit amet varius egestas.
+                </div>
+              </div> -->
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <div class="container-fluid custom-container">
+        <div class="col-md-12 footer-end clearfix">
+          <div class="left">
+            <span class="copy">© 2017. All rights reserved. <span class="white"><a href="{{ url('/') }}"> Prajapati Sangam</a></span></span>
+            <span class="created">Pampered by <span class="white"><a href="{{ url('/') }}"> Prajapati Sangam</a></span></span>
+          </div>
+          <div class="right">
+            <a class="btn color-7 size-2 hover-9" href="{{ url('/about') }}">About Us</a>
+            <!-- <a class="btn color-7 size-2 hover-9">Help</a> -->
+            <a class="btn color-7 size-2 hover-9" href="{{ url('/terms') }}">Terms of use</a>
+          </div>
+        </div>      
+      </div>
+    </div>    
   </footer>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -133,5 +300,9 @@ $actionName = app('request')->route()->getAction();
 	        });
 	    });
     </script>
+    <script src="{{ URL::asset('js/assets/idangerous.swiper.min.js') }}"></script>
+    <script src="{{ URL::asset('js/assets/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ URL::asset('js/assets/jquery.viewportchecker.min.js') }}"></script>        
+    <script src="{{ URL::asset('js/assets/global.js') }}"></script>    
   </body>
 </html>
