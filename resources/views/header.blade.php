@@ -61,7 +61,7 @@ $actionName = app('request')->route()->getAction();
   				<div class="nav-links">
   					<ul class="list-unstyled">
   						<li><a href="{{ url('/handleProfile') }}"> <i class="fa fa-user" aria-hidden="true"></i> profile </a></li>
-              <li><a href="{{ url('/') }}"> <i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+              <li><a href="{{ url('/handleProfile') }}"> <i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
   						<li><a href="{{ url('/familyTree') }}"> <i class="fa fa-tree" aria-hidden="true"></i> create family tree </a></li>
   						<li><a role="button" data-toggle="modal" data-target="#myModal_search"> <i class="fa fa-search" aria-hidden="true"></i> search </a></li>
   						<li><a href="{{ url('/logout') }}"> <i class="fa fa-sign-out" aria-hidden="true"></i> logout </a></li>
@@ -70,6 +70,26 @@ $actionName = app('request')->route()->getAction();
   			</div>
   		</nav>
   	</aside>
+    @else
+    <aside id="my-navigation" class="offcanvas">
+      <nav>
+        <div class="navigation">
+          <button data-offcanvas-close="my-navigation" class="btn close-btn"><i class="ion-ios-arrow-thin-left"></i> Menu</button>
+          <div class="my-profile">
+            <div class="profile-icon">
+              
+            </div>
+            <div class="profile-details"></div>
+          </div>
+          <div class="nav-links">
+            <ul class="list-unstyled">
+              <li><a href="{{ url('/handleProfile') }}"> <i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+              <li><a role="button" data-toggle="modal" data-target="#myModal_search"> <i class="fa fa-search" aria-hidden="true"></i> search </a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </aside>
     @endif
 
 	
@@ -78,9 +98,9 @@ $actionName = app('request')->route()->getAction();
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-          @if(\Auth::user())
+          
 					<button data-offcanvas-open="my-navigation" class="btn open-btn"><i class="ion-navicon"></i></button>
-          @endif
+          
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 					<div class="main-logo">

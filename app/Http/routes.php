@@ -18,7 +18,7 @@ Route::get('/test', ['as' => 'test', 'uses' => 'StaticpageController@test']);
 Route::get('/logout', ['as' => 'logout', 'uses' => 'UsersController@logout']);
 
 //search
-Route::get('/search', ['middleware' => 'auth', 'as' => 'search', 'uses' => 'SearchController@search']);
+Route::get('/search', ['as' => 'search', 'uses' => 'SearchController@search']);
 
 //Profile
 Route::get('/handleProfile', ['middleware' => 'auth', 'as' => 'handleProfile', 'uses' => 'UsersController@handleProfile']);
