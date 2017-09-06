@@ -49,6 +49,7 @@ Route::get('/verify', ['as' => 'verify', 'uses' =>'UsersController@verify']);
 Route::post('/handleVerify', ['as' => 'handleVerify', 'uses' =>'UsersController@handleVerify']);
 
 //static company policy
+Route::get('/about', ['as' => 'about', 'uses' =>'StaticpageController@about']);
 Route::get('/terms', ['as' => 'terms', 'uses' =>'StaticpageController@terms']); 
 Route::get('/faqs', ['as' => 'faqs', 'uses' =>'StaticpageController@faqs']); 
 //cron

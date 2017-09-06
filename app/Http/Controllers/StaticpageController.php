@@ -16,6 +16,10 @@ class StaticpageController extends Controller{
 		return view('welcome');
 	}
 
+	public function about(){
+		return view('static.about');
+	}
+
 	public function test(){
 		return view('welcome__');
 	}
