@@ -62,7 +62,7 @@ $actionName = app('request')->route()->getAction();
   					<ul class="list-unstyled">
   						<li><a href="{{ url('/handleProfile') }}"> <i class="fa fa-user" aria-hidden="true"></i> profile </a></li>
               <li><a href="{{ url('/handleProfile') }}"> <i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
-  						<li><a href="{{ url('/familyTree') }}"> <i class="fa fa-tree" aria-hidden="true"></i> create family tree </a></li>
+  						<li><a href="{{ url('/familyTree') }}"> <i class="fa fa-tree" aria-hidden="true"></i> create family tree </a></li>              
   						<li><a role="button" data-toggle="modal" data-target="#myModal_search"> <i class="fa fa-search" aria-hidden="true"></i> search </a></li>
   						<li><a href="{{ url('/logout') }}"> <i class="fa fa-sign-out" aria-hidden="true"></i> logout </a></li>
   					</ul>

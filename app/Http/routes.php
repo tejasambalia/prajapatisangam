@@ -20,6 +20,14 @@ Route::get('/logout', ['as' => 'logout', 'uses' => 'UsersController@logout']);
 //search
 Route::get('/search', ['as' => 'search', 'uses' => 'SearchController@search']);
 
+//new features
+Route::get('/news', ['as' => 'news', 'uses' => 'FeaturesController@news']);
+Route::get('/books', ['as' => 'books', 'uses' => 'FeaturesController@books']);
+Route::get('/videos', ['as' => 'videos', 'uses' => 'FeaturesController@videos']);
+
+//dynamic features link
+Route::get('/video/{title}/{id}', ['as' => 'video', 'uses' => 'FeaturesController@video']);
+
 //Profile
 Route::get('/handleProfile', ['middleware' => 'auth', 'as' => 'handleProfile', 'uses' => 'UsersController@handleProfile']);
 Route::get('/profile', ['middleware' => 'auth', 'as' => 'profile', 'uses' => 'UsersController@profile']);
