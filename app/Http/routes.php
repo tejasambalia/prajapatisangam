@@ -12,6 +12,7 @@
 */
 
 Route::get('/', ['as' => '/', 'uses' => 'StaticpageController@welcome']);
+Route::get('/index', ['as' => 'index', 'uses' => 'StaticpageController@welcome']);
 
 Route::get('/test', ['as' => 'test', 'uses' => 'StaticpageController@test']);
 
@@ -62,3 +63,4 @@ Route::get('/terms', ['as' => 'terms', 'uses' =>'StaticpageController@terms']);
 Route::get('/faqs', ['as' => 'faqs', 'uses' =>'StaticpageController@faqs']); 
 //cron
 Route::get('/createRelation', ['as' => 'createRoute', 'uses' => 'CronController@createRelation']);
+Route::get('/sitemap', ['as' => 'sitemap', 'uses' => 'SitemapController@sitemap']);
