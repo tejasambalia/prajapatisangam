@@ -69,8 +69,9 @@ class SitemapController extends Controller
 
 		$xml.="</urlset>";
 
-		$fp = fopen('sitemap.xml', 'w');
-		fwrite($fp, $xml);
-		fclose($fp);
+		// $fp = fopen('sitemap.xml', 'w');
+		// fwrite($fp, $xml);
+		// fclose($fp);
+		echo $xml;
 	}
 }
