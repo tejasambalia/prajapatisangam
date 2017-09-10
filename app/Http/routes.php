@@ -64,3 +64,4 @@ Route::get('/faqs', ['as' => 'faqs', 'uses' =>'StaticpageController@faqs']);
 //cron
 Route::get('/createRelation', ['as' => 'createRoute', 'uses' => 'CronController@createRelation']);
 Route::get('/sitemap', ['as' => 'sitemap', 'uses' => 'SitemapController@sitemap']);
+Route::get('/fetchnews', ['as' => 'fetchnews', 'uses' => 'NewsController@callapi']);
