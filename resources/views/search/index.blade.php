@@ -17,10 +17,6 @@ $userData = array();
 $userAddress = array();
 $userData = new userData();
 $userAddress = new UserAddress();
-
-$profileAdded = \Auth::user()->profile_created;
-$userId = \Auth::user()->id;
-
 ?>
 
 <section class="profile_details">
