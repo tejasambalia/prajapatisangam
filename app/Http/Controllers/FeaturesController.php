@@ -18,4 +18,8 @@ class FeaturesController extends Controller{
 		$viewCounter->videoViewCounter($id);
 		return view('content.video', compact('id'));
 	}
+
+	public function news(){
+		return view('content.news');
+	}
 }

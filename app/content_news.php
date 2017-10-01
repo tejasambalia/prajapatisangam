@@ -30,6 +30,7 @@ class content_news extends Model
     public static function get(){
         $obj = DB::table('content_news')
         	->select('id', 'title', 'image_link', 'url', 'description', 'author', 'source', 'view_count', 'like_count', 'audit_created_date')
+            ->orderBy('audit_created_date', 'desc')
         	->get();        	
         
         return $obj;
