@@ -11,6 +11,7 @@ use Validator;
 use Response;
 use App\Classes\SearchLogic;
 use App\Classes\ViewCounter;
+use App\content_user;
 
 class FeaturesController extends Controller{
 	public function video($title, $id){
@@ -21,5 +22,21 @@ class FeaturesController extends Controller{
 
 	public function news(){
 		return view('content.news');
+	}
+
+	public function upload(){
+		return view('content.upload');
+	}
+
+	public function handleUpload(Request $request){
+		$data = $request->only('title', 'description');
+		content_user::insert($data);
+
+		$msg = "Content uploaded successfully";
+		return redirect()->route('profile')->withErrors(['notification' => $msg]);
+	}
+
+	public function publicContent(){
+		return view('content.public-content');
 	}
 }

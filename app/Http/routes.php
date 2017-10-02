@@ -57,6 +57,11 @@ Route::post('/handleSignin', ['as' => 'handleSignin', 'uses' =>'UsersController@
 Route::get('/verify', ['as' => 'verify', 'uses' =>'UsersController@verify']); 
 Route::post('/handleVerify', ['as' => 'handleVerify', 'uses' =>'UsersController@handleVerify']);
 
+//user functions
+Route::get('/upload', ['as' => 'upload', 'middleware' => 'auth', 'uses' => 'FeaturesController@upload']);
+Route::post('handleUpload', ['as' => 'handleUpload', 'middleware' => 'auth', 'uses' => 'FeaturesController@handleUpload']);
+Route::get('/content', ['as' => 'content', 'uses' => 'FeaturesController@publicContent']);
+
 //static company policy
 Route::get('/about', ['as' => 'about', 'uses' =>'StaticpageController@about']);
 Route::get('/terms', ['as' => 'terms', 'uses' =>'StaticpageController@terms']); 

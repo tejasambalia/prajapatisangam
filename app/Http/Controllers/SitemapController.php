@@ -65,6 +65,7 @@ class SitemapController extends Controller
 		$xml.="<url><loc>".$link."about</loc><lastmod>2017-09-03</lastmod></url>";
 		$xml.="<url><loc>".$link."terms</loc><lastmod>2017-09-03</lastmod></url>";
 		$xml.="<url><loc>".$link."faqs</loc><lastmod>2017-09-03</lastmod></url>";
+		$xml.="<url><loc>".$link."news</loc><lastmod>".date('Y-m-d')."</lastmod></url>";
 		
 
 		$xml.="</urlset>";

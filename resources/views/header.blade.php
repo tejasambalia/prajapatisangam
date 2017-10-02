@@ -70,7 +70,9 @@ $actionName = app('request')->route()->getAction();
               <li><a href="{{ url('/handleProfile') }}"> <i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
   						<li><a href="{{ url('/familyTree') }}"> <i class="fa fa-tree" aria-hidden="true"></i> create family tree </a></li>              
   						<li><a role="button" data-toggle="modal" data-target="#myModal_search"> <i class="fa fa-search" aria-hidden="true"></i> search </a></li>
+              <li><a href="{{ url('/content') }}"> <i class="fa fa-users" aria-hidden="true"></i> Content </a></li>
               <li><a href="{{ url('/news') }}"> <i class="fa fa-home" aria-hidden="true"></i> News </a></li>
+              <li><a href="{{ url('/upload') }}"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a></li>
   						<li><a href="{{ url('/logout') }}"> <i class="fa fa-sign-out" aria-hidden="true"></i> logout </a></li>
   					</ul>
   				</div>
@@ -92,6 +94,7 @@ $actionName = app('request')->route()->getAction();
             <ul class="list-unstyled">
               <li><a href="{{ url('/handleProfile') }}"> <i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
               <li><a role="button" data-toggle="modal" data-target="#myModal_search"> <i class="fa fa-search" aria-hidden="true"></i> search </a></li>
+              <li><a href="{{ url('/content') }}"> <i class="fa fa-users" aria-hidden="true"></i> Content </a></li>
               <li><a href="{{ url('/news') }}"> <i class="fa fa-home" aria-hidden="true"></i> News </a></li>
             </ul>
           </div>

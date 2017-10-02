@@ -142,4 +142,14 @@ class UserData extends Model
                 'relationCreated'   => $data['relationCreated']
             ]);
     }
+
+    public static function getUserName($user_id){
+        $data = DB::table('userData')
+            ->select('firstName')
+            ->where('user_id', $user_id)
+            ->where('relationSelect', '1')
+            ->first();
+
+        return $data->firstName;
+    }
 }
