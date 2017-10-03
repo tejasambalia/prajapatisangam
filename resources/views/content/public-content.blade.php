@@ -34,7 +34,7 @@ $UserData = new UserData();
 						<div class="post-desc">
 							<!-- <div class="post-category">{!! $data->title !!}</div> -->
 							<a class="post-label" href="">{!! $data->title !!}</a>
-							<div class="post-text">{!! $data->description !!}</div>
+							<div class="post-text">{!! nl2br($data->description) !!}</div>
 							<!-- <a class="btn color-1 size-2 hover-1" href="blog-detail.html">Read more</a> -->
 							<!-- <div class="info-block">
 								<span><i class="fa fa-thumbs-o-up"></i> 360</span>
