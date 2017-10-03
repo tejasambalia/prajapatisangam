@@ -29,7 +29,7 @@ $UserData = new UserData();
 							</div>
 						</div>
 						@if($data->image_link!='')
-						<a class="post-preview post-image" href="blog-detail.html"><img class="img-responsive img-full" src="img/blog_grid_1.jpg" alt=""></a>
+						<a class="post-preview post-image" href=""><img class="img-responsive img-full" src="$data->image_link" alt="" style="width: 320px; height: auto;"></a>
 						@endif
 						<div class="post-desc">
 							<!-- <div class="post-category">{!! $data->title !!}</div> -->
