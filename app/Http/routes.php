@@ -66,6 +66,7 @@ Route::get('/content', ['as' => 'content', 'uses' => 'FeaturesController@publicC
 Route::get('/about', ['as' => 'about', 'uses' =>'StaticpageController@about']);
 Route::get('/terms', ['as' => 'terms', 'uses' =>'StaticpageController@terms']); 
 Route::get('/faqs', ['as' => 'faqs', 'uses' =>'StaticpageController@faqs']); 
+Route::get('/team', ['as' => 'team', 'uses' => 'StaticpageController@team']);
 //cron
 Route::get('/createRelation', ['as' => 'createRoute', 'uses' => 'CronController@createRelation']);
 Route::get('/sitemap', ['as' => 'sitemap', 'uses' => 'SitemapController@sitemap']);

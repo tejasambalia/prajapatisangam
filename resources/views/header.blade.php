@@ -258,6 +258,7 @@ $actionName = app('request')->route()->getAction();
                   <!-- <li><a href="blog-detail-2.html">Job</a></li> -->
                   <!-- <li><a href="blog-detail-2.html">Projets</a></li> -->
                   <li><a href="{{ url('/faqs') }}">FAQs</a></li>
+                  <li><a href="{{ url('/team') }}">Team</a></li>
                 </ul></div>
                 <div class="col-md-6">
                 <ul class="link-list">
