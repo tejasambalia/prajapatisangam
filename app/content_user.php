@@ -42,7 +42,7 @@ class content_user extends Model
             ->insert([
                 'title' => $data['title'],
                 'description' => $data['description'],
-                //'image_link' => $data['image_link'],
+                'image_link' => $data['image_link'],
                 'view_count' => '0',
                 'like_count' => '0',
                 'audit_created_date' => date('Y-m-d H:i:s'),

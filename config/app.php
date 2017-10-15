@@ -158,6 +158,7 @@ return [
 
         //custom added
         'Collective\Html\HtmlServiceProvider',
+        'Intervention\Image\ImageServiceProvider'
 
     ],
 
@@ -208,6 +209,7 @@ return [
         //custom added
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
+        'Image' => 'Intervention\Image\Facades\Image'
 
     ],
 

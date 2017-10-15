@@ -11,7 +11,9 @@ use Validator;
 use Response;
 use App\Classes\SearchLogic;
 use App\Classes\ViewCounter;
+use App\Classes\General;
 use App\content_user;
+use Image;
 
 class FeaturesController extends Controller{
 	public function video($title, $id){
@@ -29,7 +31,24 @@ class FeaturesController extends Controller{
 	}
 
 	public function handleUpload(Request $request){
-		$data = $request->only('title', 'description');
+		$data = $request->only('title', 'description', 'attachment');
+		$this->validate($request, [
+
+	        'attachment' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+	    ]);
+	    $image = $request->file('attachment');
+	    $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+	    $destinationPath = public_path('img');
+	    $img = Image::make($image->getRealPath());
+	    $img->resize(200, 200, function ($constraint) {
+		    $constraint->aspectRatio();
+		})->save($destinationPath.'/'.$input['imagename']);
+		unset($data['attachment']);
+
+		$obj = new General;
+		$data['image_link'] = $obj->getUserImagePath($input['imagename']);
+
 		content_user::insert($data);
 
 		$msg = "Content uploaded successfully";

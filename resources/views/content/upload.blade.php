@@ -10,7 +10,7 @@
 						<div class="info-block style-2">
 							<div class="be-large-post-align"><h3 class="info-block-label">Upload Content</h3></div>
 						</div>
-						{!! Form::open(array('route' => 'handleUpload', 'accept-charset' => 'utf-8')) !!}
+						{!! Form::open(array('route' => 'handleUpload', 'accept-charset' => 'utf-8', 'enctype' => 'multipart/form-data')) !!}
 							<div class="be-large-post-align">
 								<div class="row">
 									<div class="input-col col-xs-12">
@@ -25,10 +25,10 @@
 											{!! Form::textarea('description', '', array('class' => 'form-input textarea-resize-no',  'placeholder' => 'Write your description here *', 'required' => 'required')) !!}
 										</div>								
 									</div>
-									<!-- <div class="input-col col-xs-12">
+									<div class="input-col col-xs-12">
 										<div class="form-label">Image</div>
-										<input class="form-input" type="file" placeholder="Select Image">
-									</div> -->
+										{!! Form::file('attachment', array('class' => 'form-input')) !!}
+									</div>
 									<div class="input-col col-xs-12">
 										<div class="form-group focus-2">
 											<div class="form-label"></div>
