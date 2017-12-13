@@ -71,3 +71,7 @@ Route::get('/team', ['as' => 'team', 'uses' => 'StaticpageController@team']);
 Route::get('/createRelation', ['as' => 'createRoute', 'uses' => 'CronController@createRelation']);
 Route::get('/sitemap', ['as' => 'sitemap', 'uses' => 'SitemapController@sitemap']);
 Route::get('/fetchnews', ['as' => 'fetchnews', 'uses' => 'NewsController@callapi']);
+
+//api
+//signup api
+Route::post('/api/signup/key/UQd24t2xs6C9bhRs', ['as' => 'api_signup', 'middleware' => 'api', 'uses' => 'Api\UsersController@signup']);
