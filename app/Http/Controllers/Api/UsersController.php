@@ -64,19 +64,31 @@ class UsersController extends Controller
     }
   }
 
-  public function handleSignin(Request $request){
+  public function signin(Request $request){
     $data = $request->only('contact', 'password');
-    //laravel validation
-    $validator = $this->validate($request, User::$signin_validation_rules);
-
-    //check verification is done or not
-    $check_verified = DB::table('users')->where('contact', $data['contact'])->value('verified');
-    if(\Auth::attempt($data)&&$check_verified){
-        return redirect('/handleProfile');
+    //check user available
+    if($data['contact']==""||$data['password']==""){
+      return response()->json(array('result' => 'error', 'message' => 'Please enter username and password', 'data' => array()), 422);
     }
     else{
-      $msg = "contact or password is invalid";
-      return back()->withInput()->withErrors(['email' => $msg]);
+       $validator = Validator::make($request->all(), [
+        'contact' => 'required|numeric|exists:users|digits:10',
+        'password' => 'required'
+      ]);
+      if ($validator->fails())
+      {
+        return response()->json(array('result' => 'error', 'message' => $validator->messages()), 200);
+      }
+      else{
+        //check verification is done or not
+        $check_verified = DB::table('users')->where('contact', $data['contact'])->value('verified');
+        if($check_verified){
+          return response()->json(array('result' => 'success', 'message' => 'valid user'), 200);
+        }
+        else{
+          return response()->json(array('result' => 'error', 'message' => 'user not verified'), 200);
+        }
+      }
     }
   }
 
@@ -129,10 +141,6 @@ class UsersController extends Controller
  			$msg = "Password and confirm password doesn't match";
  			return back()->withErrors([$msg]);
  		}
-  }
-
-  public function signin(){
-    return view('users.signin');
   }
 
   private function validator($data){

@@ -75,3 +75,4 @@ Route::get('/fetchnews', ['as' => 'fetchnews', 'uses' => 'NewsController@callapi
 //api
 //signup api
 Route::post('/api/signup/key/UQd24t2xs6C9bhRs', ['as' => 'api_signup', 'middleware' => 'api', 'uses' => 'Api\UsersController@signup']);
+Route::post('/api/signin/key/UQd24t2xs6C9bhRs', ['as' => 'api_signin', 'middleware' => 'api', 'uses' => 'Api\UsersController@signin']);
